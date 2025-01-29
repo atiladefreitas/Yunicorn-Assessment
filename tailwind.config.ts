@@ -9,8 +9,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'md': '18px',
+      },
       fontFamily: {
-        "segoe-ui": ["Segoe_UI", "sans-serif"],
+        segoe: ["Segoe_UI"],
         gestura: ["Gestura_Display"],
       },
       colors: {

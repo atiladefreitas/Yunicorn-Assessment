@@ -11,6 +11,9 @@ import {
   advantages,
   benefitsLeft,
   benefitsRight,
+  testimonials,
+  goals,
+  book,
 } from "./infos";
 
 export default function Home() {
@@ -35,7 +38,7 @@ export default function Home() {
               {NavOptions.map((option, index) => (
                 <p
                   key={index}
-                  className="flex cursor-pointer items-center gap-[6px] font-segoe-ui text-white"
+                  className="flex cursor-pointer items-center gap-[6px] font-['Segoe_UI'] text-white"
                 >
                   {option.title.toUpperCase()}
                   {option.popover && <ChevronDown className="text-white/60" />}
@@ -59,7 +62,7 @@ export default function Home() {
                       />
                     ))}
                 </div>
-                <p className="font-segoe-ui font-[18px]">SCREENINGDIENST</p>
+                <p className="font-['Segoe_UI'] font-[18px]">SCREENINGDIENST</p>
               </span>
               <h1 className="mb-4 text-center font-['Gestura_Display'] text-4xl text-white md:text-7xl">
                 Dein professionelles <br />
@@ -124,7 +127,7 @@ export default function Home() {
               alt="Logo"
             />
             <Separator orientation="vertical" />
-            <p className="font-segoe-ui text-[#002533]/25">OVERVIEW</p>
+            <p className="font-['Segoe_UI'] text-[#002533]/25">OVERVIEW</p>
           </div>
 
           <div className="mb-24 mt-8 flex flex-col gap-[40px] md:mb-44">
@@ -239,7 +242,7 @@ export default function Home() {
                   <>
                     <span
                       key={`left-${index}`}
-                      className="flex items-center font-segoe-ui text-xl text-black/70"
+                      className="flex items-center font-['Segoe_UI'] text-xl text-black/70"
                     >
                       <Dot color="#9D968C" />
                       <p>{benefit}</p>
@@ -255,7 +258,7 @@ export default function Home() {
                   <>
                     <span
                       key={`right-${index}`}
-                      className="flex items-center font-segoe-ui text-xl text-black/70"
+                      className="flex items-center font-['Segoe_UI'] text-xl text-black/70"
                     >
                       <Dot color="#9D968C" />
                       <p>{benefit}</p>
@@ -291,7 +294,7 @@ export default function Home() {
                 </h3>
               </span>
 
-              <p className="font-segoe-ui text-xl text-black/70">
+              <p className="font-['Segoe_UI'] text-xl text-black/70">
                 1996 startete Mario Lüddemann als privater Börsenhändler im
                 deutschen Aktienmarkt mit 5.000 DM Startkapital und erreichte
                 bereits 2001 eine Million Gewinn als Daytrader an den deutschen
@@ -312,7 +315,7 @@ export default function Home() {
                     height={24}
                     alt="Arrow right"
                   />
-                  <p className="bg-gradient-to-b from-white to-[#BFE7FF] bg-clip-text text-transparent">
+                  <p className="bg-gradient-to-b from-white to-[#BFE7FF] bg-clip-text font-['Segoe_UI'] text-md font-semibold text-transparent">
                     Trading
                   </p>
                 </Button>
@@ -328,6 +331,136 @@ export default function Home() {
                   </p>
                 </Button>
               </div>
+            </div>
+          </div>
+
+          <div className="grid min-h-[3rem] w-full grid-cols-3 gap-14">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center gap-6 text-center"
+              >
+                <Image
+                  width={350}
+                  height={350}
+                  src={testimonial.photo}
+                  alt={testimonial.author}
+                />
+                <span className="flex flex-col gap-1">
+                  <h6 className="font-['Gestura_Display'] text-3xl">
+                    {testimonial.author}
+                  </h6>
+                  <p className="font-['Segoe_UI'] text-xl uppercase italic text-black/50">
+                    {testimonial.title}
+                  </p>
+                </span>
+                <p className="font-['Segoe_UI'] text-xl text-black/60">
+                  {testimonial.text}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-44 grid w-full grid-cols-2 gap-28">
+            <div>
+              <h2 className="font-['Gestura_Display'] text-6xl text-[#071629]">
+                Deine Ziele & <br /> Vorteile
+              </h2>
+            </div>
+
+            <div className="flex flex-col">
+              {goals.map((goal, index) => (
+                <>
+                  <span
+                    key={`${goal}-${index}`}
+                    className="flex items-start gap-6"
+                  >
+                    <Image
+                      src={goal.icon}
+                      width={64}
+                      height={64}
+                      alt={goal.title}
+                    />
+                    <div className="-mt-1 flex flex-col gap-4">
+                      <h4 className="font-['Gestura_Display'] text-3xl text-[#0F2736]">
+                        {goal.title}
+                      </h4>
+                      <p className="font-['Segoe_UI'] text-xl text-[#071629]/60">
+                        {goal.description}
+                      </p>
+                    </div>
+                  </span>
+                  {index !== goals.length - 1 && (
+                    <Separator className="my-12" key={index} />
+                  )}
+                </>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid min-h-[3rem] w-full grid-cols-2 items-center gap-28">
+            <div>
+              <Image
+                src="/assets/images/guy-smiling.png"
+                width={666}
+                height={660}
+                alt="Logo"
+              />
+            </div>
+            <div className="flex flex-col gap-8">
+              <h2 className="font-['Gestura_Display'] text-6xl">
+                Buche jetzt unseren Screeningdienst!
+              </h2>
+
+              <p className="font-['Segoe_UI'] text-xl text-[#071629]/60">
+                Teste unseren Screeningdienst 30 Tage für nur 1 € und erhalte
+                den vollen Zugriff auf alle Inhalte – inklusive Mario Lüddemanns
+                Trading-Watchlist der aktuellen Woche.
+              </p>
+
+              <span className="flex flex-col gap-5">
+                {book.map((item, index) => (
+                  <div key={index} className="flex items-center gap-5">
+                    <Image
+                      src={item.icon}
+                      width={64}
+                      height={64}
+                      alt={item.title}
+                    />
+                    <p className="font-['Segoe_UI'] text-xl text-[#071629]/60">
+                      {item.title}
+                    </p>
+                  </div>
+                ))}
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-28">
+            <div className="flex flex-col gap-6">
+              <Image
+                src="/assets/icons/quality-seal.png"
+                width={114}
+                height={80}
+                alt="logo"
+              />
+              <p className="text-xl text-black/70">
+                778 Bewertungen auf ProvenExpert.com
+              </p>
+              <h2 className="font-['Gestura_Display'] text-6xl">
+                Coaching,
+                <br /> Mentoring für Börsenhandel <br /> und synthetische
+                Anlagestrategien
+              </h2>
+            </div>
+
+            <div>
+              <Image
+                src="/assets/images/coaching.png"
+                width={671}
+                height={690}
+                alt="Logo"
+              />
             </div>
           </div>
         </main>

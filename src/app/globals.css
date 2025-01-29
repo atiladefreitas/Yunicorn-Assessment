@@ -5,30 +5,37 @@
 /* Segoe UI Font Family */
 @font-face {
   font-family: "Segoe UI";
-  src: url("/assets/fonts/Segoe UI.ttf") format("truetype");
+  src: url("/assets/fonts/SEGOE-UI.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Segoe UI";
-  src: url("/assets/fonts/Segoe UI Bold.ttf") format("truetype");
+  src: url("/assets/fonts/SEGOE-UI-BOLD.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Segoe UI";
-  src: url("/assets/fonts/Segoe UI Italic.ttf") format("truetype");
+  src: url("/assets/fonts/SEGOE-UI-ITALIC.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Segoe UI";
-  src: url("/assets/fonts/Segoe UI Bold Italic.ttf") format("truetype");
+  src: url("/assets/fonts/SEGOE-UI-BOLDITALIC.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/assets/fonts/SEGOE-UI-SEMIBOLD.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
 }
 
 /* Gestura Display Font Family */
