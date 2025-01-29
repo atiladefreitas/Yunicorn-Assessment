@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 import Star from "@/components/star";
@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <>
       <section
-        className="flex h-screen w-screen flex-col items-center justify-center bg-[#172329]"
+        className="flex h-screen w-screen flex-col items-center justify-center bg-[#172329] px-4"
         style={{ backgroundImage: "url('/assets/bg.png')" }}
       >
         <main className="flex h-full w-full max-w-7xl flex-col justify-between pb-20 pt-12">
@@ -56,7 +56,10 @@ export default function Home() {
               height={34}
               alt="Logo"
             />
-            <div className="flex gap-[2.8rem]">
+            <div>
+              <Menu color="white" />
+            </div>
+            <div className="hidden gap-[2.8rem] md:flex">
               {NavOptions.map((option) => (
                 <p
                   key={`${option}`}
@@ -86,13 +89,11 @@ export default function Home() {
                 </div>
                 <p className="font-segoe-ui font-[18px]">SCREENINGDIENST</p>
               </span>
-              <h1 className="font-['Gestura_Display'] text-[84px] text-white">
-                Dein professionelles{" "}
+              <h1 className="mb-4 text-center font-['Gestura_Display'] text-4xl text-white md:text-7xl">
+                Dein professionelles <br />
+                <b className="text-[#D6B271]">Marktscreening</b>
               </h1>
-              <h1 className="-mt-4 font-['Gestura_Display'] text-[84px] text-[#D6B271]">
-                Marktscreening
-              </h1>
-              <p className="text-center text-[20px] text-white/85">
+              <p className="text-center text-xl text-white/85">
                 Mit dem Screeningdienst erhältst Du immer die stärksten
                 Trendaktien,
                 <br />
@@ -108,7 +109,9 @@ export default function Home() {
                   height={24}
                   alt="Arrow right"
                 />
-                Trading
+                <p className="bg-gradient-to-b from-white to-[#BFE7FF] bg-clip-text text-transparent">
+                  Trading
+                </p>
               </Button>
               <Button variant={"investment"}>
                 <Image
@@ -117,7 +120,9 @@ export default function Home() {
                   height={24}
                   alt="Arrow right"
                 />
-                Investment
+                <p className="bg-gradient-to-b from-[#A5906C] to-[#99763A] bg-clip-text text-transparent">
+                  Investment
+                </p>
               </Button>
             </div>
           </div>
@@ -137,7 +142,7 @@ export default function Home() {
           </div>
         </main>
       </section>
-      <section className="full flex min-h-screen justify-center bg-[#FDFBF4] pt-24">
+      <section className="full flex min-h-screen justify-center bg-[#FDFBF4] px-4 pt-24">
         <main className="w-full max-w-7xl">
           <div className="flex h-[2.8rem] items-center gap-[18px]">
             <Image
@@ -150,12 +155,12 @@ export default function Home() {
             <p className="font-segoe-ui text-[#002533]/25">OVERVIEW</p>
           </div>
 
-          <div className="mb-[180px] mt-8 flex flex-col gap-[40px]">
-            <h1 className="font-['Gestura_Display'] text-[96px] leading-none text-[#303F48]">
+          <div className="mb-24 mt-8 flex flex-col gap-[40px] md:mb-44">
+            <h1 className="font-['Gestura_Display'] text-5xl leading-none text-[#303F48] md:text-8xl">
               Richtige Aktie,
               <br /> richtige Zeit
             </h1>
-            <p className="font-['Segoe UI'] max-w-4xl text-[20px] text-[#071628]/70">
+            <p className="font-['Segoe UI'] max-w-4xl text-xl text-[#071628]/70">
               Trader müssen schnell reagieren und entscheiden können. Dabei ist
               es von enormer Wichtigkeit genau die Märkte zu identifizieren, die
               am erfolgversprechendsten sind! Welche sind die stärksten Indizes
@@ -165,16 +170,23 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid h-fit grid-cols-2 gap-[60px] pb-24">
+          <div className="mt-12 grid h-fit grid-cols-1 gap-[60px] pb-24 md:grid-cols-2">
             <div className="relative">
               <Image
                 src="/assets/images/mario-luddemann.png"
                 width={617}
                 height={641}
                 alt="Mario"
-                className="absolute z-20"
+                className="z-20 md:absolute"
               />
-              <div className="absolute -left-10 -top-8 z-10 h-[641px] w-[617px] rounded-[14px] border border-[#A5906C] bg-[#FBF4E3]" />
+
+              <Image
+                src="/assets/image-frame.svg"
+                width={617}
+                height={641}
+                alt="Mario"
+                className="-left-10 -top-8 z-10 hidden md:absolute md:flex"
+              />
             </div>
 
             <div className="flex h-full flex-col gap-[32px]">
@@ -189,7 +201,7 @@ export default function Home() {
               </h2>
 
               <span>
-                <p className="text-[20px] text-[#071629]/70">
+                <p className="text-xl text-[#071629]/70">
                   1996 startete Mario Lüddemann als privater Börsenhändler im
                   deutschen Aktienmarkt mit 5.000 DM Startkapital und erreichte
                   bereits 2001 eine Million Gewinn als Daytrader an den
@@ -248,3 +260,4 @@ export default function Home() {
     </>
   );
 }
+

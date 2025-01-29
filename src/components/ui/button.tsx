@@ -9,11 +9,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-xlrimary-foreground hover:bg-primary/90",
         trading:
-          "bg-[#537589] text-[#BFE7FF] font-segoe-ui text-[18px] font-semibold",
+          "bg-[radial-gradient(ellipse_at_center,_#537589_0%,_#295A77_100%)] font-segoe-ui text-[18px] font-semibold",
         investment:
-          "bg-[#F6F3E7] text-[#A5906C] font-segoe-ui text-[18px] font-semibold items-center",
+          "bg-[linear-gradient(90deg,_#FFDB9E00_0%,_#FFDB9E44_44%,_#FFDB9E00_100%)]  font-segoe-ui text-[18px] font-semibold bg-[#F6F3E7] border-[1.5px] border-[#A69577]",
       },
       size: {
         default: "h-[56px] w-[200px] px-4 py-2 rounded-[8px]",
