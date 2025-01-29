@@ -13,8 +13,8 @@ export default {
         'md': '18px',
       },
       fontFamily: {
-        segoe: ["Segoe_UI"],
-        gestura: ["Gestura_Display"],
+        segoe: ["Segoe UI"],
+        gestura: ["Gestura Display"],
       },
       colors: {
         background: "hsl(var(--background))",

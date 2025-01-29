@@ -25,7 +25,7 @@ export const partners = [
   },
 ];
 
-export const NavOptions = [
+export const navbar = [
   { title: "Home", popover: false },
   { title: "For beginners", popover: false },
   { title: "About us", popover: true },
@@ -67,19 +67,19 @@ export const benefitsRight = [
 
 export const testimonials = [
   {
-    photo: "/assets/images/georg.png",
+    photo: "/assets/images/georg.webp",
     author: "Georg Jocham",
     title: "Speaker & Trainer",
     text: `Mario Lüddemann hat die Antwort und mit 10+Prozent kann jeder" ein sehr, sehr gutes Argument. Das Wichtigste aber: dieses Versprechen löst er auch ein. Tolles Produkt, super Typ!`,
   },
   {
-    photo: "/assets/images/denys.png",
+    photo: "/assets/images/denys.webp",
     author: "Denys Scharnweber",
     title: "LEHRTRAINER & COACH",
     text: "Man merkt sehr schnell, dass Mario genau weiß, wovon er spricht. Ich war selber sehr überrascht, was am Markt so alles geht. Jeder, der zu Mario fährt, wird begeistert sein, wie einfach und leicht er das ganze Thema Investment erklärt.",
   },
   {
-    photo: "/assets/images/michael.png",
+    photo: "/assets/images/michael.webp",
     author: "Michael Matern",
     title: "SPEAKER & UNTERNEHMER",
     text: "Mario Lüddemann ist ein echter Vollblutprofi, der hält, was er verspricht. Er versteht es, komplexe Inhalte mit viel Humor und Sympathie zu transportieren. Fachlich und menschlich einfach ein toller Typ.",

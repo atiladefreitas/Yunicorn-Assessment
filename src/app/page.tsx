@@ -6,9 +6,8 @@ import { StatisticCard } from "@/components/StatisticCard";
 
 import {
   partners,
-  NavOptions,
+  navbar,
   statistics,
-  advantages,
   benefitsLeft,
   benefitsRight,
   testimonials,
@@ -21,7 +20,7 @@ export default function Home() {
     <>
       <section
         className="flex h-screen w-screen flex-col items-center justify-center bg-[#172329] px-4"
-        style={{ backgroundImage: "url('/assets/bg.png')" }}
+        style={{ backgroundImage: "url('/assets/bg.webp')" }}
       >
         <main className="flex h-full w-full max-w-7xl flex-col justify-between pb-20 pt-12">
           <nav className="flex justify-between">
@@ -35,7 +34,7 @@ export default function Home() {
               <Menu color="white" className="md:hidden" />
             </div>
             <div className="hidden gap-[2.8rem] md:flex">
-              {NavOptions.map((option, index) => (
+              {navbar.map((option, index) => (
                 <p
                   key={index}
                   className="flex cursor-pointer items-center gap-[6px] font-['Segoe_UI'] text-white"
@@ -147,7 +146,7 @@ export default function Home() {
 
           <div className="mt-12 grid h-fit grid-cols-1 gap-[60px] pb-24 md:grid-cols-2">
             <Image
-              src="/assets/images/mario_alt.png"
+              src="/assets/images/mario_alt.webp"
               width={617}
               height={641}
               alt="Mario"
@@ -221,7 +220,7 @@ export default function Home() {
 
               <div className="">
                 <Image
-                  src="/assets/images/team_alt.png"
+                  src="/assets/images/team_alt.webp"
                   width={617}
                   height={641}
                   alt="Team"
@@ -273,10 +272,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 grid w-full grid-cols-2 gap-16 pb-24">
+          <div className="mt-12 grid w-full grid-cols-2 gap-32 pb-24">
             <div>
               <Image
-                src="/assets/images/smiling-team.png"
+                src="/assets/images/smiling-team.webp"
                 width={602}
                 height={649}
                 alt="Mario"
@@ -341,8 +340,8 @@ export default function Home() {
                 className="flex flex-col items-center gap-6 text-center"
               >
                 <Image
-                  width={350}
-                  height={350}
+                  width={300}
+                  height={300}
                   src={testimonial.photo}
                   alt={testimonial.author}
                 />
@@ -401,7 +400,7 @@ export default function Home() {
           <div className="grid min-h-[3rem] w-full grid-cols-2 items-center gap-28">
             <div>
               <Image
-                src="/assets/images/guy-smiling.png"
+                src="/assets/images/guy-smiling.webp"
                 width={666}
                 height={660}
                 alt="Logo"
@@ -439,7 +438,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-28">
             <div className="flex flex-col gap-6">
               <Image
-                src="/assets/icons/quality-seal.png"
+                src="/assets/icons/quality-seal.webp"
                 width={114}
                 height={80}
                 alt="logo"
@@ -456,7 +455,7 @@ export default function Home() {
 
             <div>
               <Image
-                src="/assets/images/coaching.png"
+                src="/assets/images/coaching.webp"
                 width={671}
                 height={690}
                 alt="Logo"
