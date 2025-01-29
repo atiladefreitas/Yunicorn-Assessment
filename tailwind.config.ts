@@ -10,10 +10,10 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        'md': '18px',
+        md: "18px",
       },
       fontFamily: {
-        segoe: ["Segoe UI"],
+        segoe: ["Segoe UI", "sans serif"],
         gestura: ["Gestura Display"],
       },
       colors: {

@@ -14,6 +14,7 @@ import {
   goals,
   book,
 } from "./infos";
+import Buttons from "@/components/buttons";
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
               {navbar.map((option, index) => (
                 <p
                   key={index}
-                  className="flex cursor-pointer items-center gap-[6px] font-['Segoe_UI'] text-white"
+                  className="flex cursor-pointer items-center gap-[6px] font-segoe text-white"
                 >
                   {option.title.toUpperCase()}
                   {option.popover && <ChevronDown className="text-white/60" />}
@@ -61,9 +62,9 @@ export default function Home() {
                       />
                     ))}
                 </div>
-                <p className="font-['Segoe_UI'] font-[18px]">SCREENINGDIENST</p>
+                <p className="font-md font-segoe">SCREENINGDIENST</p>
               </span>
-              <h1 className="mb-4 text-center font-['Gestura_Display'] text-4xl text-white md:text-7xl">
+              <h1 className="mb-4 text-center font-gestura text-4xl text-white md:text-7xl">
                 Dein professionelles <br />
                 <b className="text-[#D6B271]">Marktscreening</b>
               </h1>
@@ -76,28 +77,7 @@ export default function Home() {
             </div>
 
             <div className="mt-12 flex items-center justify-center gap-4">
-              <Button variant={"trading"}>
-                <Image
-                  src="/assets/icons/trading.svg"
-                  width={24}
-                  height={24}
-                  alt="Arrow right"
-                />
-                <p className="bg-gradient-to-b from-white to-[#BFE7FF] bg-clip-text text-transparent">
-                  Trading
-                </p>
-              </Button>
-              <Button variant={"investment"}>
-                <Image
-                  src="/assets/icons/investment.svg"
-                  width={24}
-                  height={24}
-                  alt="Arrow right"
-                />
-                <p className="bg-gradient-to-b from-[#A5906C] to-[#99763A] bg-clip-text text-transparent">
-                  Investment
-                </p>
-              </Button>
+              <Buttons />
             </div>
           </div>
 
@@ -118,7 +98,7 @@ export default function Home() {
       </section>
       <section className="full flex min-h-screen justify-center bg-[#FDFBF4] px-4 pt-24">
         <main className="w-full max-w-7xl">
-          <div className="flex h-[2.8rem] items-center gap-[18px]">
+          <div className="gap-md flex h-[2.8rem] items-center">
             <Image
               src="/assets/logos/company/icon.svg"
               width={27}
@@ -126,11 +106,11 @@ export default function Home() {
               alt="Logo"
             />
             <Separator orientation="vertical" />
-            <p className="font-['Segoe_UI'] text-[#002533]/25">OVERVIEW</p>
+            <p className="font-segoe text-[#002533]/25">OVERVIEW</p>
           </div>
 
           <div className="mb-24 mt-8 flex flex-col gap-[40px] md:mb-44">
-            <h1 className="font-['Gestura_Display'] text-5xl leading-none text-[#303F48] md:text-8xl">
+            <h1 className="font-gestura text-5xl leading-none text-[#303F48] md:text-8xl">
               Richtige Aktie,
               <br /> richtige Zeit
             </h1>
@@ -160,7 +140,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <h2 className="font-['Gestura_Display'] text-6xl leading-none text-[#303F48]">
+              <h2 className="font-gestura text-6xl leading-none text-[#303F48]">
                 Mario <br />
                 Lüddemann
               </h2>
@@ -199,12 +179,12 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 gap-[60px] md:grid-cols-2">
               <div className="flex h-full flex-col items-center justify-center gap-[32px]">
-                <h2 className="font-['Gestura_Display'] text-6xl leading-none text-[#303F48]">
+                <h2 className="font-gestura text-6xl leading-none text-[#303F48]">
                   Mario Lüddemanns Screeningdienst
                 </h2>
 
                 <span>
-                  <p className="font-['Segoe_UI'] text-xl text-[#071629]/70">
+                  <p className="font-segoe text-xl text-[#071629]/70">
                     Nutze die Chance und profitiere von Marios Wissen. Sein Team
                     stellt jede Woche eine umfassende Analyse zusammen, die Dir
                     den Einstieg in die richtigen und gewinnbringenden Trades
@@ -231,7 +211,7 @@ export default function Home() {
           </div>
 
           <div className="flex w-full flex-col gap-16 pb-24">
-            <h2 className="font-['Gestura_Display'] text-6xl leading-none text-[#303F48]">
+            <h2 className="font-gestura text-6xl leading-none text-[#303F48]">
               Das sind Deine Vorteile:
             </h2>
 
@@ -241,7 +221,7 @@ export default function Home() {
                   <>
                     <span
                       key={`left-${index}`}
-                      className="flex items-center font-['Segoe_UI'] text-xl text-black/70"
+                      className="flex items-center font-segoe text-xl text-black/70"
                     >
                       <Dot color="#9D968C" />
                       <p>{benefit}</p>
@@ -257,7 +237,7 @@ export default function Home() {
                   <>
                     <span
                       key={`right-${index}`}
-                      className="flex items-center font-['Segoe_UI'] text-xl text-black/70"
+                      className="flex items-center font-segoe text-xl text-black/70"
                     >
                       <Dot color="#9D968C" />
                       <p>{benefit}</p>
@@ -285,15 +265,13 @@ export default function Home() {
 
             <div className="flex h-full flex-col justify-center gap-5">
               <span className="flex flex-col gap-2">
-                <h1 className="font-['Gestura_Display'] text-6xl text-[#D6B271]">
-                  BONUS
-                </h1>
-                <h3 className="font-['Gestura_Display'] text-3xl text-black">
+                <h1 className="font-gestura text-6xl text-[#D6B271]">BONUS</h1>
+                <h3 className="font-gestura text-3xl text-black">
                   Crashkurs Markttechnik
                 </h3>
               </span>
 
-              <p className="font-['Segoe_UI'] text-xl text-black/70">
+              <p className="font-segoe text-xl text-black/70">
                 1996 startete Mario Lüddemann als privater Börsenhändler im
                 deutschen Aktienmarkt mit 5.000 DM Startkapital und erreichte
                 bereits 2001 eine Million Gewinn als Daytrader an den deutschen
@@ -307,28 +285,7 @@ export default function Home() {
               </p>
 
               <div className="mt-2 flex items-center gap-4">
-                <Button variant={"trading"}>
-                  <Image
-                    src="/assets/icons/trading.svg"
-                    width={24}
-                    height={24}
-                    alt="Arrow right"
-                  />
-                  <p className="bg-gradient-to-b from-white to-[#BFE7FF] bg-clip-text font-['Segoe_UI'] text-md font-semibold text-transparent">
-                    Trading
-                  </p>
-                </Button>
-                <Button variant={"investment"}>
-                  <Image
-                    src="/assets/icons/investment.svg"
-                    width={24}
-                    height={24}
-                    alt="Arrow right"
-                  />
-                  <p className="bg-gradient-to-b from-[#A5906C] to-[#99763A] bg-clip-text text-transparent">
-                    Investment
-                  </p>
-                </Button>
+                <Buttons />
               </div>
             </div>
           </div>
@@ -346,14 +303,14 @@ export default function Home() {
                   alt={testimonial.author}
                 />
                 <span className="flex flex-col gap-1">
-                  <h6 className="font-['Gestura_Display'] text-3xl">
+                  <h6 className="font-gestura text-3xl">
                     {testimonial.author}
                   </h6>
-                  <p className="font-['Segoe_UI'] text-xl uppercase italic text-black/50">
+                  <p className="font-segoe text-xl uppercase italic text-black/50">
                     {testimonial.title}
                   </p>
                 </span>
-                <p className="font-['Segoe_UI'] text-xl text-black/60">
+                <p className="font-segoe text-xl text-black/60">
                   {testimonial.text}
                 </p>
               </div>
@@ -362,7 +319,7 @@ export default function Home() {
 
           <div className="mt-44 grid w-full grid-cols-2 gap-28">
             <div>
-              <h2 className="font-['Gestura_Display'] text-6xl text-[#071629]">
+              <h2 className="font-gestura text-6xl text-[#071629]">
                 Deine Ziele & <br /> Vorteile
               </h2>
             </div>
@@ -381,10 +338,10 @@ export default function Home() {
                       alt={goal.title}
                     />
                     <div className="-mt-1 flex flex-col gap-4">
-                      <h4 className="font-['Gestura_Display'] text-3xl text-[#0F2736]">
+                      <h4 className="font-gestura text-3xl text-[#0F2736]">
                         {goal.title}
                       </h4>
-                      <p className="font-['Segoe_UI'] text-xl text-[#071629]/60">
+                      <p className="font-segoe text-xl text-[#071629]/60">
                         {goal.description}
                       </p>
                     </div>
@@ -407,11 +364,11 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col gap-8">
-              <h2 className="font-['Gestura_Display'] text-6xl">
+              <h2 className="font-gestura text-6xl">
                 Buche jetzt unseren Screeningdienst!
               </h2>
 
-              <p className="font-['Segoe_UI'] text-xl text-[#071629]/60">
+              <p className="font-segoe text-xl text-[#071629]/60">
                 Teste unseren Screeningdienst 30 Tage für nur 1 € und erhalte
                 den vollen Zugriff auf alle Inhalte – inklusive Mario Lüddemanns
                 Trading-Watchlist der aktuellen Woche.
@@ -426,7 +383,7 @@ export default function Home() {
                       height={64}
                       alt={item.title}
                     />
-                    <p className="font-['Segoe_UI'] text-xl text-[#071629]/60">
+                    <p className="font-segoe text-xl text-[#071629]/60">
                       {item.title}
                     </p>
                   </div>
@@ -446,7 +403,7 @@ export default function Home() {
               <p className="text-xl text-black/70">
                 778 Bewertungen auf ProvenExpert.com
               </p>
-              <h2 className="font-['Gestura_Display'] text-6xl">
+              <h2 className="font-gestura text-6xl">
                 Coaching,
                 <br /> Mentoring für Börsenhandel <br /> und synthetische
                 Anlagestrategien
