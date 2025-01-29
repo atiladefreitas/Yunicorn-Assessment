@@ -1,10 +1,17 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Dot, Menu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { StatisticCard } from "@/components/StatisticCard";
 
-import { partners, NavOptions, statistics } from "./infos";
+import {
+  partners,
+  NavOptions,
+  statistics,
+  advantages,
+  benefitsLeft,
+  benefitsRight,
+} from "./infos";
 
 export default function Home() {
   return (
@@ -135,26 +142,16 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid h-fit grid-cols-1 gap-[60px] bg-green-200 pb-24 md:grid-cols-2">
-            <div className="relative">
-              <Image
-                src="/assets/images/mario-luddemann.png"
-                width={617}
-                height={641}
-                alt="Mario"
-                className="z-20 md:absolute"
-              />
+          <div className="mt-12 grid h-fit grid-cols-1 gap-[60px] pb-24 md:grid-cols-2">
+            <Image
+              src="/assets/images/mario_alt.png"
+              width={617}
+              height={641}
+              alt="Mario"
+              className=""
+            />
 
-              <Image
-                src="/assets/image-frame.svg"
-                width={617}
-                height={641}
-                alt="Mario"
-                className="-left-10 -top-8 z-10 hidden md:absolute md:flex"
-              />
-            </div>
-
-            <div className="flex h-[100%] flex-col gap-[32px] bg-red-100">
+            <div className="flex h-full flex-col gap-[32px]">
               <div className="-mb-2 w-fit rounded-full bg-[#537589] px-7 py-3">
                 <p className="font-['Segoe UI'] bg-gradient-to-b from-white to-[#BFE7FF] bg-clip-text text-xl text-transparent">
                   Börsen- und Vermögensexperte
@@ -188,8 +185,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 h-screen gap-[60px] bg-red-200">
-            <div className="my-28 flex justify-between bg-red-100">
+          <div className="mt-12 h-screen gap-[60px]">
+            <div className="my-28 flex flex-col justify-between md:flex-row">
               {statistics.map((stat, index) => (
                 <StatisticCard
                   key={index}
@@ -199,12 +196,12 @@ export default function Home() {
               ))}
             </div>
             <div className="grid grid-cols-1 gap-[60px] md:grid-cols-2">
-              <div className="flex h-full flex-col items-center gap-[32px] bg-red-600">
+              <div className="flex h-full flex-col items-center justify-center gap-[32px]">
                 <h2 className="font-['Gestura_Display'] text-6xl leading-none text-[#303F48]">
                   Mario Lüddemanns Screeningdienst
                 </h2>
 
-                <span className="h-full bg-red-400">
+                <span>
                   <p className="font-['Segoe_UI'] text-xl text-[#071629]/70">
                     Nutze die Chance und profitiere von Marios Wissen. Sein Team
                     stellt jede Woche eine umfassende Analyse zusammen, die Dir
@@ -219,28 +216,119 @@ export default function Home() {
                 </span>
               </div>
 
-              <div className="relative">
+              <div className="">
                 <Image
-                  src="/assets/images/team.png"
+                  src="/assets/images/team_alt.png"
                   width={617}
                   height={641}
-                  alt="Mario"
-                  className="z-20 md:absolute"
-                />
-
-                <Image
-                  src="/assets/image-frame.svg"
-                  width={617}
-                  height={641}
-                  alt="Mario"
-                  className="-right-10 -top-8 z-10 hidden md:absolute md:flex"
+                  alt="Team"
+                  className=""
                 />
               </div>
             </div>
           </div>
 
-          <div className="min-h-[3rem] w-full bg-red-100">
-            <p>Das sind Deine Vorteile:</p>
+          <div className="flex w-full flex-col gap-16 pb-24">
+            <h2 className="font-['Gestura_Display'] text-6xl leading-none text-[#303F48]">
+              Das sind Deine Vorteile:
+            </h2>
+
+            <div className="grid grid-cols-2">
+              <div className="flex-1 space-y-4">
+                {benefitsLeft.map((benefit, index) => (
+                  <>
+                    <span
+                      key={`left-${index}`}
+                      className="flex items-center font-segoe-ui text-xl text-black/70"
+                    >
+                      <Dot color="#9D968C" />
+                      <p>{benefit}</p>
+                    </span>
+                    {index !== benefitsLeft.length - 1 && (
+                      <Separator className="max-w-md" key={index} />
+                    )}
+                  </>
+                ))}
+              </div>
+              <div className="flex-1 space-y-4">
+                {benefitsRight.map((benefit, index) => (
+                  <>
+                    <span
+                      key={`right-${index}`}
+                      className="flex items-center font-segoe-ui text-xl text-black/70"
+                    >
+                      <Dot color="#9D968C" />
+                      <p>{benefit}</p>
+                    </span>
+
+                    {index !== benefitsLeft.length - 1 && (
+                      <Separator className="max-w-md" key={index} />
+                    )}
+                  </>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 grid w-full grid-cols-2 gap-16 pb-24">
+            <div>
+              <Image
+                src="/assets/images/smiling-team.png"
+                width={602}
+                height={649}
+                alt="Mario"
+                className=""
+              />
+            </div>
+
+            <div className="flex h-full flex-col justify-center gap-5">
+              <span className="flex flex-col gap-2">
+                <h1 className="font-['Gestura_Display'] text-6xl text-[#D6B271]">
+                  BONUS
+                </h1>
+                <h3 className="font-['Gestura_Display'] text-3xl text-black">
+                  Crashkurs Markttechnik
+                </h3>
+              </span>
+
+              <p className="font-segoe-ui text-xl text-black/70">
+                1996 startete Mario Lüddemann als privater Börsenhändler im
+                deutschen Aktienmarkt mit 5.000 DM Startkapital und erreichte
+                bereits 2001 eine Million Gewinn als Daytrader an den deutschen
+                Finanzmärkten. Seit 1996 setzte der Börsen-Profi über 65.672
+                Trades mit einem Handelsvolumen von mehr als einer Milliarde
+                Euro um. Heute ist Mario Lüddemann finanziell unabhängig und
+                selbstständig tätig als Portfoliomanager, Finanzanalyst sowie
+                Buchautor und hochschulzertifizierter Managementtrainer. Er ist
+                einer der bekanntesten Trading- und Investment-Experten in
+                Deutschland.{" "}
+              </p>
+
+              <div className="mt-2 flex items-center gap-4">
+                <Button variant={"trading"}>
+                  <Image
+                    src="/assets/icons/trading.svg"
+                    width={24}
+                    height={24}
+                    alt="Arrow right"
+                  />
+                  <p className="bg-gradient-to-b from-white to-[#BFE7FF] bg-clip-text text-transparent">
+                    Trading
+                  </p>
+                </Button>
+                <Button variant={"investment"}>
+                  <Image
+                    src="/assets/icons/investment.svg"
+                    width={24}
+                    height={24}
+                    alt="Arrow right"
+                  />
+                  <p className="bg-gradient-to-b from-[#A5906C] to-[#99763A] bg-clip-text text-transparent">
+                    Investment
+                  </p>
+                </Button>
+              </div>
+            </div>
           </div>
         </main>
       </section>

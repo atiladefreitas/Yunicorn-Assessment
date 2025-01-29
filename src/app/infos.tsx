@@ -48,3 +48,19 @@ export const statistics = [
     label: "Berufserfahrung",
   },
 ];
+
+export const benefitsLeft = [
+  "Viele Stunden Zeitersparnis",
+  "Mehr als 25 Jahre Trading-Erfahrung",
+  "Erfahrung aus über 65.000 absolvierten Trades",
+  "Einfache Übersicht mit Handelschancen",
+  "Immer die stärksten Trendaktien auf der Watchlist",
+];
+
+export const benefitsRight = [
+  "Wöchentlich neue Trading-Möglichkeiten",
+  "Die richtige Aktie zur richtigen Zeit",
+  "Weltweit nutzbar",
+  "Kurzübersicht für Trader mit wenig Zeit",
+  "Bonus: Crashkurs Markttechnik",
+];

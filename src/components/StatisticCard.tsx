@@ -9,7 +9,7 @@ interface StatisticCardProps {
 export function StatisticCard({ value, label }: StatisticCardProps) {
   return (
     <span>
-      <p className="font-['Gestura_Display'] text-[#9D968C] md:text-[90px]">
+      <p className="font-['Gestura_Display'] text-6xl text-[#9D968C] md:text-[90px]">
         {value}
       </p>
       <div className="flex items-center gap-[9px]">
