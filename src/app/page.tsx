@@ -2,44 +2,9 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ChevronDown, Menu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { StatisticCard } from "@/components/StatisticCard";
 
-import Star from "@/components/star";
-
-const partners = [
-  {
-    src: "/assets/logos/partners/forbes.png",
-    width: 104,
-    height: 26,
-    alt: "Forbes logo",
-  },
-  {
-    src: "/assets/logos/partners/hamburg.png",
-    width: 137,
-    height: 26,
-    alt: "Hamburg logo",
-  },
-  {
-    src: "/assets/logos/partners/borse.png",
-    width: 88,
-    height: 41,
-    alt: "Börse logo",
-  },
-  {
-    src: "/assets/logos/partners/focus.png",
-    width: 108,
-    height: 40,
-    alt: "Focus logo",
-  },
-];
-
-const NavOptions = [
-  { title: "Home", popover: false },
-  { title: "For beginners", popover: false },
-  { title: "About us", popover: true },
-  { title: "Training", popover: true },
-  { title: "News", popover: true },
-  { title: "success stories", popover: true },
-];
+import { partners, NavOptions, statistics } from "./infos";
 
 export default function Home() {
   return (
@@ -57,12 +22,12 @@ export default function Home() {
               alt="Logo"
             />
             <div>
-              <Menu color="white" />
+              <Menu color="white" className="md:hidden" />
             </div>
             <div className="hidden gap-[2.8rem] md:flex">
-              {NavOptions.map((option) => (
+              {NavOptions.map((option, index) => (
                 <p
-                  key={`${option}`}
+                  key={index}
                   className="flex cursor-pointer items-center gap-[6px] font-segoe-ui text-white"
                 >
                   {option.title.toUpperCase()}
@@ -79,7 +44,7 @@ export default function Home() {
                     .fill(0)
                     .map((_, index) => (
                       <Image
-                        key={_}
+                        key={index}
                         alt="star"
                         width={17}
                         height={16}
@@ -128,9 +93,9 @@ export default function Home() {
           </div>
 
           <div className="flex h-fit w-full items-center justify-between">
-            {partners.map((partner) => (
+            {partners.map((partner, index) => (
               <Image
-                key={partner.src}
+                key={index}
                 src={partner.src}
                 width={partner.width}
                 height={partner.height}
@@ -170,7 +135,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid h-fit grid-cols-1 gap-[60px] pb-24 md:grid-cols-2">
+          <div className="mt-12 grid h-fit grid-cols-1 gap-[60px] bg-green-200 pb-24 md:grid-cols-2">
             <div className="relative">
               <Image
                 src="/assets/images/mario-luddemann.png"
@@ -189,13 +154,14 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex h-full flex-col gap-[32px]">
-              <div className="-mb-[10px] w-fit rounded-full bg-[#537589] px-[26px] py-[11px]">
-                <p className="font-['Segoe UI'] text-[18px] text-[#BFE7FF]">
+            <div className="flex h-[100%] flex-col gap-[32px] bg-red-100">
+              <div className="-mb-2 w-fit rounded-full bg-[#537589] px-7 py-3">
+                <p className="font-['Segoe UI'] bg-gradient-to-b from-white to-[#BFE7FF] bg-clip-text text-xl text-transparent">
                   Börsen- und Vermögensexperte
                 </p>
               </div>
-              <h2 className="font-['Gestura_Display'] text-[64px] leading-none text-[#303F48]">
+
+              <h2 className="font-['Gestura_Display'] text-6xl leading-none text-[#303F48]">
                 Mario <br />
                 Lüddemann
               </h2>
@@ -222,42 +188,62 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mb-12 flex justify-between">
-            <span>
-              <p className="font-['Gestura_Display'] text-[90px] text-[#9D968C]">
-                64.800
-              </p>
-              <div className="flex items-center gap-[9px]">
-                <Star color="#9D968C" width={21} height={22} />
-                <p className="text-[18px] text-[#071629]/80">
-                  Umgesetzte Trades
-                </p>
+          <div className="mt-12 h-screen gap-[60px] bg-red-200">
+            <div className="my-28 flex justify-between bg-red-100">
+              {statistics.map((stat, index) => (
+                <StatisticCard
+                  key={index}
+                  value={stat.value}
+                  label={stat.label}
+                />
+              ))}
+            </div>
+            <div className="grid grid-cols-1 gap-[60px] md:grid-cols-2">
+              <div className="flex h-full flex-col items-center gap-[32px] bg-red-600">
+                <h2 className="font-['Gestura_Display'] text-6xl leading-none text-[#303F48]">
+                  Mario Lüddemanns Screeningdienst
+                </h2>
+
+                <span className="h-full bg-red-400">
+                  <p className="font-['Segoe_UI'] text-xl text-[#071629]/70">
+                    Nutze die Chance und profitiere von Marios Wissen. Sein Team
+                    stellt jede Woche eine umfassende Analyse zusammen, die Dir
+                    den Einstieg in die richtigen und gewinnbringenden Trades
+                    ermöglicht. So siehst Du einfach und schnell, wann es sich
+                    lohnt zu handeln. Tausche Unsicherheit gegen Sicherheit. Mit
+                    Mario Lüddemanns Screeningdienst nutzt Du professionelle
+                    Analysen, ohne dafür Zeit investieren zu müssen.
+                  </p>
+
+                  <p className="mt-8 font-bold">DAS IST DEINE LÖSUNG!</p>
+                </span>
               </div>
-            </span>
-            <span>
-              <p className="font-['Gestura_Display'] text-[90px] text-[#9D968C]">
-                9.000
-              </p>
-              <div className="flex items-center gap-[9px]">
-                <Star color="#9D968C" width={21} height={22} />
-                <p className="text-[18px] text-[#071629]/80">
-                  Zufriedene Kunden
-                </p>
+
+              <div className="relative">
+                <Image
+                  src="/assets/images/team.png"
+                  width={617}
+                  height={641}
+                  alt="Mario"
+                  className="z-20 md:absolute"
+                />
+
+                <Image
+                  src="/assets/image-frame.svg"
+                  width={617}
+                  height={641}
+                  alt="Mario"
+                  className="-right-10 -top-8 z-10 hidden md:absolute md:flex"
+                />
               </div>
-            </span>
-            <span>
-              <p className="font-['Gestura_Display'] text-[90px] text-[#9D968C]">
-                25 Jahre
-              </p>
-              <div className="flex items-center gap-[9px]">
-                <Star color="#9D968C" width={21} height={22} />
-                <p className="text-[18px] text-[#071629]/80">Berufserfahrung</p>
-              </div>
-            </span>
+            </div>
+          </div>
+
+          <div className="min-h-[3rem] w-full bg-red-100">
+            <p>Das sind Deine Vorteile:</p>
           </div>
         </main>
       </section>
     </>
   );
 }
-
