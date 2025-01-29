@@ -86,7 +86,7 @@ export default function Home() {
             </div>
           </article>
 
-          <footer className="flex h-fit w-full items-center justify-between">
+          <footer className="flex w-full flex-col items-center justify-between">
             {partners.map((partner, index) => (
               <Image
                 key={index}
@@ -103,7 +103,7 @@ export default function Home() {
       </header>
 
       <section
-        className="full flex min-h-screen justify-center bg-[#FDFBF4] px-4 pt-24"
+        className="full flex min-h-screen items-center justify-center bg-[#FDFBF4] px-4 pt-24"
         aria-label="Main content"
       >
         <div className="w-full max-w-7xl">
@@ -119,7 +119,7 @@ export default function Home() {
           </header>
 
           <article className="mb-24 mt-8 flex flex-col gap-[40px] md:mb-44">
-            <h2 className="font-gestura text-5xl leading-none text-[#303F48] md:text-8xl">
+            <h2 className="font-gestura text-4xl leading-none text-[#303F48] md:text-8xl">
               Richtige Aktie,
               <br /> richtige Zeit
             </h2>
@@ -176,10 +176,10 @@ export default function Home() {
           </article>
 
           <section
-            className="mt-12 h-screen gap-[60px]"
+            className="h-fit gap-16 md:mt-12 md:h-screen"
             aria-label="Statistics"
           >
-            <div className="my-28 flex flex-col justify-between md:flex-row">
+            <div className="flex flex-col justify-between space-y-8 md:my-28 md:flex-row">
               {statistics.map((stat, index) => (
                 <StatisticCard
                   key={index}
@@ -189,9 +189,9 @@ export default function Home() {
               ))}
             </div>
 
-            <article className="grid grid-cols-1 gap-[60px] md:grid-cols-2">
-              <div className="flex h-full flex-col items-center justify-center gap-[32px]">
-                <h2 className="font-gestura text-6xl leading-none text-[#303F48]">
+            <article className="mt-20 grid grid-cols-1 gap-16 md:grid-cols-2">
+              <div className="flex h-full w-full flex-col items-center justify-center gap-8">
+                <h2 className="font-gestura text-4xl leading-none text-[#303F48] md:text-6xl">
                   Mario Lüddemanns Screeningdienst
                 </h2>
 
@@ -223,14 +223,14 @@ export default function Home() {
           </section>
 
           <section
-            className="flex w-full flex-col gap-16 pb-24"
+            className="mt-12 flex w-full flex-col gap-16 pb-24"
             aria-label="Benefits"
           >
-            <h2 className="font-gestura text-6xl leading-none text-[#303F48]">
+            <h2 className="font-gestura text-4xl leading-none text-[#303F48] md:text-6xl">
               Das sind Deine Vorteile:
             </h2>
 
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <ul className="flex-1 space-y-4">
                 {benefitsLeft.map((benefit, index) => (
                   <li key={`left-${index}`}>
@@ -239,7 +239,7 @@ export default function Home() {
                       <p>{benefit}</p>
                     </span>
                     {index !== benefitsLeft.length - 1 && (
-                      <Separator className="max-w-md" />
+                      <Separator className="my-2 max-w-md" />
                     )}
                   </li>
                 ))}
@@ -252,7 +252,7 @@ export default function Home() {
                       <p>{benefit}</p>
                     </span>
                     {index !== benefitsLeft.length - 1 && (
-                      <Separator className="max-w-md" />
+                      <Separator className="my-2 max-w-md" />
                     )}
                   </li>
                 ))}
@@ -261,7 +261,7 @@ export default function Home() {
           </section>
 
           <section
-            className="mt-12 grid w-full grid-cols-2 gap-32 pb-24"
+            className="mt-12 grid w-full grid-cols-1 gap-20 pb-24 md:grid-cols-2 md:gap-32"
             aria-label="Bonus section"
           >
             <div>
@@ -295,20 +295,20 @@ export default function Home() {
                 Deutschland.
               </p>
 
-              <div className="mt-2 flex items-center gap-4">
+              <div className="mt-2 flex flex-col gap-4 md:flex-row md:items-center">
                 <Buttons />
               </div>
             </article>
           </section>
 
           <section
-            className="grid min-h-[3rem] w-full grid-cols-3 gap-14"
+            className="grid hidden min-h-[3rem] w-full grid-cols-3 gap-14"
             aria-label="Testimonials"
           >
             {testimonials.map((testimonial, index) => (
               <article
                 key={index}
-                className="flex flex-col items-center gap-6 text-center"
+                className="flex flex-col items-center gap-16 text-center"
               >
                 <Image
                   width={300}
@@ -333,11 +333,11 @@ export default function Home() {
           </section>
 
           <section
-            className="mt-44 grid w-full grid-cols-2 gap-28"
+            className="mt-44 grid w-full grid-cols-1 gap-16 md:grid-cols-2 md:gap-28"
             aria-label="Goals and advantages"
           >
             <header>
-              <h2 className="font-gestura text-6xl text-[#071629]">
+              <h2 className="font-gestura text-4xl text-[#071629] md:text-6xl">
                 Deine Ziele & <br /> Vorteile
               </h2>
             </header>
@@ -345,7 +345,7 @@ export default function Home() {
             <div className="flex flex-col">
               {goals.map((goal, index) => (
                 <article key={`${goal}-${index}`}>
-                  <div className="flex items-start gap-6">
+                  <div className="flex flex-col items-start gap-8 md:flex-row md:gap-16">
                     <Image
                       src={goal.icon}
                       width={64}
@@ -371,7 +371,7 @@ export default function Home() {
           </section>
 
           <section
-            className="grid min-h-[3rem] w-full grid-cols-2 items-center gap-28"
+            className="mt-12 grid min-h-[3rem] w-full grid-cols-1 items-center gap-16 md:grid-cols-2 md:gap-28"
             aria-label="Booking section"
           >
             <div>
@@ -384,7 +384,7 @@ export default function Home() {
               />
             </div>
             <article className="flex flex-col gap-8">
-              <h2 className="font-gestura text-6xl">
+              <h2 className="font-gestura text-4xl md:text-6xl">
                 Buche jetzt unseren Screeningdienst!
               </h2>
 
@@ -414,36 +414,35 @@ export default function Home() {
           </section>
 
           <section
-            className="grid grid-cols-2 gap-28"
+            className="mt-24 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-28"
             aria-label="Quality section"
           >
-            <article className="flex flex-col gap-6">
+            <Image
+              src="/assets/images/coaching.webp"
+              width={671}
+              height={690}
+              alt="Coaching illustration"
+              loading="lazy"
+              className="order-first w-full md:order-last"
+            />
+
+            <article className="order-last flex flex-col gap-8 md:order-first md:gap-16">
               <Image
-                src="/assets/icons/quality-seal.webp"
+                src="/assets/icons/quality-seal.png"
                 width={114}
                 height={80}
                 alt="Quality seal"
                 loading="lazy"
               />
-              <p className="text-xl text-black/70">
+              <p className="text-lg text-black/70 md:text-xl">
                 778 Bewertungen auf ProvenExpert.com
               </p>
-              <h2 className="font-gestura text-6xl">
+              <h2 className="font-gestura text-4xl md:text-6xl lg:text-6xl">
                 Coaching,
                 <br /> Mentoring für Börsenhandel <br /> und synthetische
                 Anlagestrategien
               </h2>
             </article>
-
-            <div>
-              <Image
-                src="/assets/images/coaching.webp"
-                width={671}
-                height={690}
-                alt="Coaching illustration"
-                loading="lazy"
-              />
-            </div>
           </section>
         </div>
       </section>
