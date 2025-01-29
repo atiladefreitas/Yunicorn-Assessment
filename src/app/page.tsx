@@ -18,21 +18,25 @@ import Buttons from "@/components/buttons";
 
 export default function Home() {
   return (
-    <>
-      <section
+    <main>
+      <header
         className="flex h-screen w-screen flex-col items-center justify-center bg-[#172329] px-4"
         style={{ backgroundImage: "url('/assets/bg.webp')" }}
       >
-        <main className="flex h-full w-full max-w-7xl flex-col justify-between pb-20 pt-12">
-          <nav className="flex justify-between">
+        <div className="flex h-full w-full max-w-7xl flex-col justify-between pb-20 pt-12">
+          <nav className="flex justify-between" aria-label="Main navigation">
             <Image
-              src="/assets/logos/company/luddemann.png"
+              src="/assets/logos/company/logo.svg"
               width={178}
               height={34}
               alt="Logo"
             />
             <div>
-              <Menu color="white" className="md:hidden" />
+              <Menu
+                color="white"
+                className="md:hidden"
+                aria-label="Mobile menu"
+              />
             </div>
             <div className="hidden gap-[2.8rem] md:flex">
               {navbar.map((option, index) => (
@@ -46,7 +50,8 @@ export default function Home() {
               ))}
             </div>
           </nav>
-          <div>
+
+          <article className="text-center">
             <div className="flex flex-col items-center justify-center text-[#D6B271]">
               <span className="flex flex-col items-center justify-center gap-3">
                 <div className="flex gap-[5px]">
@@ -79,9 +84,9 @@ export default function Home() {
             <div className="mt-12 flex items-center justify-center gap-4">
               <Buttons />
             </div>
-          </div>
+          </article>
 
-          <div className="flex h-fit w-full items-center justify-between">
+          <footer className="flex h-fit w-full items-center justify-between">
             {partners.map((partner, index) => (
               <Image
                 key={index}
@@ -93,12 +98,16 @@ export default function Home() {
                 style={{ width: "auto", height: "auto" }}
               />
             ))}
-          </div>
-        </main>
-      </section>
-      <section className="full flex min-h-screen justify-center bg-[#FDFBF4] px-4 pt-24">
-        <main className="w-full max-w-7xl">
-          <div className="gap-md flex h-[2.8rem] items-center">
+          </footer>
+        </div>
+      </header>
+
+      <section
+        className="full flex min-h-screen justify-center bg-[#FDFBF4] px-4 pt-24"
+        aria-label="Main content"
+      >
+        <div className="w-full max-w-7xl">
+          <header className="gap-md flex h-[2.8rem] items-center">
             <Image
               src="/assets/logos/company/icon.svg"
               width={27}
@@ -107,30 +116,29 @@ export default function Home() {
             />
             <Separator orientation="vertical" />
             <p className="font-segoe text-[#002533]/25">OVERVIEW</p>
-          </div>
+          </header>
 
-          <div className="mb-24 mt-8 flex flex-col gap-[40px] md:mb-44">
-            <h1 className="font-gestura text-5xl leading-none text-[#303F48] md:text-8xl">
+          <article className="mb-24 mt-8 flex flex-col gap-[40px] md:mb-44">
+            <h2 className="font-gestura text-5xl leading-none text-[#303F48] md:text-8xl">
               Richtige Aktie,
               <br /> richtige Zeit
-            </h1>
+            </h2>
             <p className="font-['Segoe UI'] max-w-4xl text-xl text-[#071628]/70">
               Trader müssen schnell reagieren und entscheiden können. Dabei ist
               es von enormer Wichtigkeit genau die Märkte zu identifizieren, die
               am erfolgversprechendsten sind! Welche sind die stärksten Indizes
               und welche Aktien die zukünftigen Highflyer? Oft steht man vor
               einem Chart und denkt „Wäre ich mal genau an dieser Stelle
-              eingestiegen“. 
+              eingestiegen".
             </p>
-          </div>
+          </article>
 
-          <div className="mt-12 grid h-fit grid-cols-1 gap-[60px] pb-24 md:grid-cols-2">
+          <article className="mt-12 grid h-fit grid-cols-1 gap-[60px] pb-24 md:grid-cols-2">
             <Image
               src="/assets/images/mario_alt.webp"
               width={617}
               height={641}
               alt="Mario"
-              className=""
             />
 
             <div className="flex h-full flex-col gap-[32px]">
@@ -145,7 +153,7 @@ export default function Home() {
                 Lüddemann
               </h2>
 
-              <span>
+              <div>
                 <p className="text-xl text-[#071629]/70">
                   1996 startete Mario Lüddemann als privater Börsenhändler im
                   deutschen Aktienmarkt mit 5.000 DM Startkapital und erreichte
@@ -163,11 +171,14 @@ export default function Home() {
                   ist einer der bekanntesten Trading- und Investment-Experten in
                   Deutschland.
                 </p>
-              </span>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <div className="mt-12 h-screen gap-[60px]">
+          <section
+            className="mt-12 h-screen gap-[60px]"
+            aria-label="Statistics"
+          >
             <div className="my-28 flex flex-col justify-between md:flex-row">
               {statistics.map((stat, index) => (
                 <StatisticCard
@@ -177,13 +188,14 @@ export default function Home() {
                 />
               ))}
             </div>
-            <div className="grid grid-cols-1 gap-[60px] md:grid-cols-2">
+
+            <article className="grid grid-cols-1 gap-[60px] md:grid-cols-2">
               <div className="flex h-full flex-col items-center justify-center gap-[32px]">
                 <h2 className="font-gestura text-6xl leading-none text-[#303F48]">
                   Mario Lüddemanns Screeningdienst
                 </h2>
 
-                <span>
+                <div>
                   <p className="font-segoe text-xl text-[#071629]/70">
                     Nutze die Chance und profitiere von Marios Wissen. Sein Team
                     stellt jede Woche eine umfassende Analyse zusammen, die Dir
@@ -195,81 +207,80 @@ export default function Home() {
                   </p>
 
                   <p className="mt-8 font-bold">DAS IST DEINE LÖSUNG!</p>
-                </span>
+                </div>
               </div>
 
-              <div className="">
+              <div>
                 <Image
                   src="/assets/images/team_alt.webp"
                   width={617}
                   height={641}
                   alt="Team"
-                  className=""
+                  loading="lazy"
                 />
               </div>
-            </div>
-          </div>
+            </article>
+          </section>
 
-          <div className="flex w-full flex-col gap-16 pb-24">
+          <section
+            className="flex w-full flex-col gap-16 pb-24"
+            aria-label="Benefits"
+          >
             <h2 className="font-gestura text-6xl leading-none text-[#303F48]">
               Das sind Deine Vorteile:
             </h2>
 
             <div className="grid grid-cols-2">
-              <div className="flex-1 space-y-4">
+              <ul className="flex-1 space-y-4">
                 {benefitsLeft.map((benefit, index) => (
-                  <>
-                    <span
-                      key={`left-${index}`}
-                      className="flex items-center font-segoe text-xl text-black/70"
-                    >
+                  <li key={`left-${index}`}>
+                    <span className="flex items-center font-segoe text-xl text-black/70">
                       <Dot color="#9D968C" />
                       <p>{benefit}</p>
                     </span>
                     {index !== benefitsLeft.length - 1 && (
-                      <Separator className="max-w-md" key={index} />
+                      <Separator className="max-w-md" />
                     )}
-                  </>
+                  </li>
                 ))}
-              </div>
-              <div className="flex-1 space-y-4">
+              </ul>
+              <ul className="flex-1 space-y-4">
                 {benefitsRight.map((benefit, index) => (
-                  <>
-                    <span
-                      key={`right-${index}`}
-                      className="flex items-center font-segoe text-xl text-black/70"
-                    >
+                  <li key={`right-${index}`}>
+                    <span className="flex items-center font-segoe text-xl text-black/70">
                       <Dot color="#9D968C" />
                       <p>{benefit}</p>
                     </span>
-
                     {index !== benefitsLeft.length - 1 && (
-                      <Separator className="max-w-md" key={index} />
+                      <Separator className="max-w-md" />
                     )}
-                  </>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
-          </div>
+          </section>
 
-          <div className="mt-12 grid w-full grid-cols-2 gap-32 pb-24">
+          <section
+            className="mt-12 grid w-full grid-cols-2 gap-32 pb-24"
+            aria-label="Bonus section"
+          >
             <div>
               <Image
                 src="/assets/images/smiling-team.webp"
                 width={602}
                 height={649}
                 alt="Mario"
-                className=""
+                loading="lazy"
               />
             </div>
 
-            <div className="flex h-full flex-col justify-center gap-5">
-              <span className="flex flex-col gap-2">
-                <h1 className="font-gestura text-6xl text-[#D6B271]">BONUS</h1>
+            <article className="flex h-full flex-col justify-center gap-5">
+              <header className="flex flex-col gap-2">
+                <h2 className="font-gestura text-6xl text-[#D6B271]">BONUS</h2>
                 <h3 className="font-gestura text-3xl text-black">
                   Crashkurs Markttechnik
                 </h3>
-              </span>
+              </header>
 
               <p className="font-segoe text-xl text-black/70">
                 1996 startete Mario Lüddemann als privater Börsenhändler im
@@ -281,18 +292,21 @@ export default function Home() {
                 selbstständig tätig als Portfoliomanager, Finanzanalyst sowie
                 Buchautor und hochschulzertifizierter Managementtrainer. Er ist
                 einer der bekanntesten Trading- und Investment-Experten in
-                Deutschland.{" "}
+                Deutschland.
               </p>
 
               <div className="mt-2 flex items-center gap-4">
                 <Buttons />
               </div>
-            </div>
-          </div>
+            </article>
+          </section>
 
-          <div className="grid min-h-[3rem] w-full grid-cols-3 gap-14">
+          <section
+            className="grid min-h-[3rem] w-full grid-cols-3 gap-14"
+            aria-label="Testimonials"
+          >
             {testimonials.map((testimonial, index) => (
-              <div
+              <article
                 key={index}
                 className="flex flex-col items-center gap-6 text-center"
               >
@@ -301,41 +315,43 @@ export default function Home() {
                   height={300}
                   src={testimonial.photo}
                   alt={testimonial.author}
+                  loading="lazy"
                 />
-                <span className="flex flex-col gap-1">
-                  <h6 className="font-gestura text-3xl">
+                <header className="flex flex-col gap-1">
+                  <h3 className="font-gestura text-3xl">
                     {testimonial.author}
-                  </h6>
+                  </h3>
                   <p className="font-segoe text-xl uppercase italic text-black/50">
                     {testimonial.title}
                   </p>
-                </span>
-                <p className="font-segoe text-xl text-black/60">
+                </header>
+                <blockquote className="font-segoe text-xl text-black/60">
                   {testimonial.text}
-                </p>
-              </div>
+                </blockquote>
+              </article>
             ))}
-          </div>
+          </section>
 
-          <div className="mt-44 grid w-full grid-cols-2 gap-28">
-            <div>
+          <section
+            className="mt-44 grid w-full grid-cols-2 gap-28"
+            aria-label="Goals and advantages"
+          >
+            <header>
               <h2 className="font-gestura text-6xl text-[#071629]">
                 Deine Ziele & <br /> Vorteile
               </h2>
-            </div>
+            </header>
 
             <div className="flex flex-col">
               {goals.map((goal, index) => (
-                <>
-                  <span
-                    key={`${goal}-${index}`}
-                    className="flex items-start gap-6"
-                  >
+                <article key={`${goal}-${index}`}>
+                  <div className="flex items-start gap-6">
                     <Image
                       src={goal.icon}
                       width={64}
                       height={64}
                       alt={goal.title}
+                      loading="lazy"
                     />
                     <div className="-mt-1 flex flex-col gap-4">
                       <h4 className="font-gestura text-3xl text-[#0F2736]">
@@ -345,25 +361,29 @@ export default function Home() {
                         {goal.description}
                       </p>
                     </div>
-                  </span>
+                  </div>
                   {index !== goals.length - 1 && (
-                    <Separator className="my-12" key={index} />
+                    <Separator className="my-12" />
                   )}
-                </>
+                </article>
               ))}
             </div>
-          </div>
+          </section>
 
-          <div className="grid min-h-[3rem] w-full grid-cols-2 items-center gap-28">
+          <section
+            className="grid min-h-[3rem] w-full grid-cols-2 items-center gap-28"
+            aria-label="Booking section"
+          >
             <div>
               <Image
                 src="/assets/images/guy-smiling.webp"
                 width={666}
                 height={660}
-                alt="Logo"
+                alt="Smiling person"
+                loading="lazy"
               />
             </div>
-            <div className="flex flex-col gap-8">
+            <article className="flex flex-col gap-8">
               <h2 className="font-gestura text-6xl">
                 Buche jetzt unseren Screeningdienst!
               </h2>
@@ -374,31 +394,36 @@ export default function Home() {
                 Trading-Watchlist der aktuellen Woche.
               </p>
 
-              <span className="flex flex-col gap-5">
+              <ul className="flex flex-col gap-5">
                 {book.map((item, index) => (
-                  <div key={index} className="flex items-center gap-5">
+                  <li key={index} className="flex items-center gap-5">
                     <Image
                       src={item.icon}
                       width={64}
                       height={64}
                       alt={item.title}
+                      loading="lazy"
                     />
                     <p className="font-segoe text-xl text-[#071629]/60">
                       {item.title}
                     </p>
-                  </div>
+                  </li>
                 ))}
-              </span>
-            </div>
-          </div>
+              </ul>
+            </article>
+          </section>
 
-          <div className="grid grid-cols-2 gap-28">
-            <div className="flex flex-col gap-6">
+          <section
+            className="grid grid-cols-2 gap-28"
+            aria-label="Quality section"
+          >
+            <article className="flex flex-col gap-6">
               <Image
                 src="/assets/icons/quality-seal.webp"
                 width={114}
                 height={80}
-                alt="logo"
+                alt="Quality seal"
+                loading="lazy"
               />
               <p className="text-xl text-black/70">
                 778 Bewertungen auf ProvenExpert.com
@@ -408,19 +433,20 @@ export default function Home() {
                 <br /> Mentoring für Börsenhandel <br /> und synthetische
                 Anlagestrategien
               </h2>
-            </div>
+            </article>
 
             <div>
               <Image
                 src="/assets/images/coaching.webp"
                 width={671}
                 height={690}
-                alt="Logo"
+                alt="Coaching illustration"
+                loading="lazy"
               />
             </div>
-          </div>
-        </main>
+          </section>
+        </div>
       </section>
-    </>
+    </main>
   );
 }
