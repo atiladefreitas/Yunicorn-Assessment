@@ -61,9 +61,16 @@ export default function Home() {
               alt="Mario"
             />
 
-            <div className="flex h-full flex-col gap-[32px]">
-              <div className="-mb-2 w-fit rounded-full bg-custom-blue px-7 py-3">
-                <p className="font-['Segoe UI'] bg-gradient-to-b from-white to-custom-blue-light bg-clip-text text-xl text-transparent">
+            <div className="flex h-full flex-col justify-end gap-8">
+              <div
+                className="-mb-2 w-fit rounded-full bg-custom-blue px-10 py-4"
+                style={{
+                  backgroundImage: "url('/assets/label-bg.svg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <p className="bg-gradient-to-b from-white to-custom-blue-light bg-clip-text font-segoe text-xl font-semibold text-transparent">
                   Börsen- und Vermögensexperte
                 </p>
               </div>
@@ -160,7 +167,7 @@ export default function Home() {
                     </span>
                     <Separator className="my-6 max-w-md md:hidden" />
                     {index !== benefitsLeft.length - 1 && (
-                      <Separator className="my-6 max-w-md hidden md:block" />
+                      <Separator className="my-6 hidden max-w-md md:block" />
                     )}
                   </li>
                 ))}

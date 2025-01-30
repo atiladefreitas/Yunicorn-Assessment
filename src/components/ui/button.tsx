@@ -13,7 +13,7 @@ const buttonVariants = cva(
         trading:
           "bg-[radial-gradient(ellipse_at_center,_#537589_0%,_#295A77_100%)] ",
         investment:
-          "bg-[linear-gradient(90deg,_#FFDB9E00_0%,_#FFDB9E44_44%,_#FFDB9E00_100%)]  bg-[#F6F3E7] border-[1.5px] border-[#A69577]",
+          "bg-[linear-gradient(90deg,_#FFDB9E00_0%,_#FFDB9E44_44%,_#FFDB9E00_100%)] bg-[#F6F3E7] border-[1.5px] border-[#A69577]",
       },
       size: {
         default: "h-[56px] w-[200px] px-4 py-2 rounded-[8px]",
