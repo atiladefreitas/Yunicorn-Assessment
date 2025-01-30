@@ -14,7 +14,7 @@ import {
 function Hero() {
   return (
     <header
-      className="flex h-screen w-screen flex-col items-center justify-center bg-[#172329] px-4"
+      className="flex h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-[#172329] px-4"
       style={{
         backgroundImage: "url('/assets/bg.webp')",
         backgroundSize: "cover",
