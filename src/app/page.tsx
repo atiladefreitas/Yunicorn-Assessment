@@ -336,8 +336,8 @@ export default function Home() {
             <article className="order-last flex flex-col justify-center gap-8 md:order-first md:gap-6">
               <Image
                 src="/assets/icons/quality-seal.png"
-                width={114}
-                height={80}
+                width={100}
+                height={70}
                 alt="Quality seal"
                 loading="lazy"
               />
