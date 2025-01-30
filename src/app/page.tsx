@@ -225,7 +225,7 @@ export default function Home() {
                 Deutschland.
               </p>
 
-              <div className="mt-2 flex flex-col gap-4 md:flex-row md:items-center">
+              <div className="mt-2 flex gap-4 md:items-center">
                 <Buttons />
               </div>
             </article>
