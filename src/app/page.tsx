@@ -15,13 +15,14 @@ import {
 import Buttons from "@/components/buttons";
 import Hero from "./section/Hero";
 import Footer from "./section/Footer";
+import Testimonials from "./section/Testimonails";
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <section
-        className="full flex min-h-screen items-center justify-center bg-[#FDFBF4] px-4 pb-24 pt-24"
+        className="full flex min-h-screen items-center justify-center bg-custom-cream px-4 pb-24 pt-24"
         aria-label="Main content"
       >
         <div className="w-full max-w-7xl">
@@ -33,15 +34,15 @@ export default function Home() {
               alt="Logo"
             />
             <Separator orientation="vertical" />
-            <p className="font-segoe text-[#002533]/25">OVERVIEW</p>
+            <p className="font-segoe text-custom-navy/25">OVERVIEW</p>
           </header>
 
           <article className="mb-24 mt-8 flex flex-col gap-[40px] md:mb-44">
-            <h2 className="font-gestura text-4xl leading-none text-[#303F48] md:text-8xl">
+            <h2 className="font-gestura text-4xl leading-none text-custom-slate md:text-8xl">
               Richtige Aktie,
               <br /> richtige Zeit
             </h2>
-            <p className="font-['Segoe UI'] max-w-4xl text-xl text-[#071628]/70">
+            <p className="font-['Segoe UI'] max-w-4xl text-xl text-custom-navy-light/70">
               Trader müssen schnell reagieren und entscheiden können. Dabei ist
               es von enormer Wichtigkeit genau die Märkte zu identifizieren, die
               am erfolgversprechendsten sind! Welche sind die stärksten Indizes
@@ -60,19 +61,19 @@ export default function Home() {
             />
 
             <div className="flex h-full flex-col gap-[32px]">
-              <div className="-mb-2 w-fit rounded-full bg-[#537589] px-7 py-3">
-                <p className="font-['Segoe UI'] bg-gradient-to-b from-white to-[#BFE7FF] bg-clip-text text-xl text-transparent">
+              <div className="-mb-2 w-fit rounded-full bg-custom-blue px-7 py-3">
+                <p className="font-['Segoe UI'] bg-gradient-to-b from-white to-custom-blue-light bg-clip-text text-xl text-transparent">
                   Börsen- und Vermögensexperte
                 </p>
               </div>
 
-              <h2 className="font-gestura text-6xl leading-none text-[#303F48]">
+              <h2 className="font-gestura text-6xl leading-none text-custom-slate">
                 Mario <br />
                 Lüddemann
               </h2>
 
               <div>
-                <p className="text-xl text-[#071629]/70">
+                <p className="text-xl text-custom-navy-light/70">
                   1996 startete Mario Lüddemann als privater Börsenhändler im
                   deutschen Aktienmarkt mit 5.000 DM Startkapital und erreichte
                   bereits 2001 eine Million Gewinn als Daytrader an den
@@ -109,12 +110,12 @@ export default function Home() {
 
             <article className="mt-20 grid grid-cols-1 gap-16 md:grid-cols-2">
               <div className="flex h-full w-full flex-col items-center justify-center gap-8">
-                <h2 className="font-gestura text-4xl leading-none text-[#303F48] md:text-6xl">
+                <h2 className="font-gestura text-4xl leading-none text-custom-slate md:text-6xl">
                   Mario Lüddemanns Screeningdienst
                 </h2>
 
                 <div>
-                  <p className="font-segoe text-xl text-[#071629]/70">
+                  <p className="font-segoe text-xl text-custom-navy-light/70">
                     Nutze die Chance und profitiere von Marios Wissen. Sein Team
                     stellt jede Woche eine umfassende Analyse zusammen, die Dir
                     den Einstieg in die richtigen und gewinnbringenden Trades
@@ -144,7 +145,7 @@ export default function Home() {
             className="mt-12 flex w-full flex-col gap-16 pb-24"
             aria-label="Benefits"
           >
-            <h2 className="font-gestura text-4xl leading-none text-[#303F48] md:text-6xl">
+            <h2 className="font-gestura text-4xl leading-none text-custom-slate md:text-6xl">
               Das sind Deine Vorteile:
             </h2>
 
@@ -194,7 +195,9 @@ export default function Home() {
 
             <article className="flex h-full flex-col justify-center gap-5">
               <header className="flex flex-col gap-2">
-                <h2 className="font-gestura text-6xl text-[#D6B271]">BONUS</h2>
+                <h2 className="font-gestura text-6xl text-custom-gold">
+                  BONUS
+                </h2>
                 <h3 className="font-gestura text-3xl text-black">
                   Crashkurs Markttechnik
                 </h3>
@@ -219,43 +222,14 @@ export default function Home() {
             </article>
           </section>
 
-          <section
-            className="grid hidden min-h-[3rem] w-full grid-cols-3 gap-14"
-            aria-label="Testimonials"
-          >
-            {testimonials.map((testimonial, index) => (
-              <article
-                key={index}
-                className="flex flex-col items-center gap-16 text-center"
-              >
-                <Image
-                  width={300}
-                  height={300}
-                  src={testimonial.photo}
-                  alt={testimonial.author}
-                  loading="lazy"
-                />
-                <header className="flex flex-col gap-1">
-                  <h3 className="font-gestura text-3xl">
-                    {testimonial.author}
-                  </h3>
-                  <p className="font-segoe text-xl uppercase italic text-black/50">
-                    {testimonial.title}
-                  </p>
-                </header>
-                <blockquote className="font-segoe text-xl text-black/60">
-                  {testimonial.text}
-                </blockquote>
-              </article>
-            ))}
-          </section>
+          <Testimonials />
 
           <section
             className="mt-44 grid w-full grid-cols-1 gap-16 md:grid-cols-2 md:gap-28"
             aria-label="Goals and advantages"
           >
             <header>
-              <h2 className="font-gestura text-4xl text-[#071629] md:text-6xl">
+              <h2 className="font-gestura text-4xl text-custom-navy-light md:text-6xl">
                 Deine Ziele & <br /> Vorteile
               </h2>
             </header>
@@ -272,10 +246,10 @@ export default function Home() {
                       loading="lazy"
                     />
                     <div className="-mt-1 flex flex-col gap-4">
-                      <h4 className="font-gestura text-3xl text-[#0F2736]">
+                      <h4 className="font-gestura text-3xl text-custom-navy-dark">
                         {goal.title}
                       </h4>
-                      <p className="font-segoe text-xl text-[#071629]/60">
+                      <p className="font-segoe text-xl text-custom-navy-light/60">
                         {goal.description}
                       </p>
                     </div>
@@ -306,7 +280,7 @@ export default function Home() {
                 Buche jetzt unseren Screeningdienst!
               </h2>
 
-              <p className="font-segoe text-xl text-[#071629]/60">
+              <p className="font-segoe text-xl text-custom-navy-light/60">
                 Teste unseren Screeningdienst 30 Tage für nur 1 € und erhalte
                 den vollen Zugriff auf alle Inhalte – inklusive Mario Lüddemanns
                 Trading-Watchlist der aktuellen Woche.
@@ -322,7 +296,7 @@ export default function Home() {
                       alt={item.title}
                       loading="lazy"
                     />
-                    <p className="font-segoe text-xl text-[#071629]/60">
+                    <p className="font-segoe text-xl text-custom-navy-light/60">
                       {item.title}
                     </p>
                   </li>
@@ -368,4 +342,3 @@ export default function Home() {
     </main>
   );
 }
-

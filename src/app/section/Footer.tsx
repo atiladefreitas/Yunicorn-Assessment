@@ -5,7 +5,7 @@ import { footer } from "../infos";
 
 function Footer() {
   return (
-    <footer className="flex h-fit w-full flex-col gap-12 bg-[#FDFBF4] pt-12">
+    <footer className="flex h-fit w-full flex-col gap-12 bg-custom-cream pt-12">
       <div className="grid h-full grid-cols-1 gap-8 px-4 md:grid-cols-5 md:px-12">
         <div className="flex flex-col gap-5 md:col-span-2">
           <Image

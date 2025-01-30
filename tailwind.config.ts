@@ -19,6 +19,21 @@ export default {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        custom: {
+          cream: "#FDFBF4",
+          navy: {
+            DEFAULT: "#002533",
+            light: "#071628",
+            dark: "#0F2736",
+          },
+          slate: "#303F48",
+          blue: {
+            DEFAULT: "#537589",
+            light: "#BFE7FF",
+          },
+          brown: "#9D968C",
+          gold: "#D6B271",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
