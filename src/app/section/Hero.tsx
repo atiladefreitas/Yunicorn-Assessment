@@ -9,7 +9,11 @@ function Hero() {
   return (
     <header
       className="flex h-screen w-screen flex-col items-center justify-center bg-[#172329] px-4"
-      style={{ backgroundImage: "url('/assets/bg.webp')" }}
+      style={{
+        backgroundImage: "url('/assets/bg.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       <div className="flex h-full w-full max-w-7xl flex-col justify-between pb-20 pt-12">
         <nav
@@ -26,6 +30,7 @@ function Hero() {
             width={178}
             height={34}
             alt="Logo"
+            priority
           />
           <div className="hidden gap-[2.8rem] md:flex">
             {navbar.map((option, index) => (
@@ -58,11 +63,17 @@ function Hero() {
               </div>
               <p className="font-segoe text-xl">SCREENINGDIENST</p>
             </span>
-            <h1 className="mb-4 text-center font-gestura text-4xl text-white md:text-7xl">
+            <h1
+              className="mb-4 text-center font-gestura text-4xl text-white md:text-7xl"
+              style={{ textRendering: "optimizeLegibility" }}
+            >
               Dein professionelles <br />
               <b className="text-[#D6B271]">Marktscreening</b>
             </h1>
-            <p className="text-center text-xl text-white/85">
+            <p
+              className="text-center text-xl text-white/85"
+              style={{ textRendering: "optimizeSpeed" }}
+            >
               Mit dem Screeningdienst erhältst Du immer die stärksten
               Trendaktien,
               <br />

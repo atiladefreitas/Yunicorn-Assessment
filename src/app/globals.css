@@ -33,10 +33,17 @@
 
 @font-face {
   font-family: "Segoe UI";
-  src: url("/assets/fonts/SEGOE-UI-SEMIBOLD.ttf") format("truetype");
+  src: url("/assets/fonts/SEGOE-UI-SEMIBOLD.TTF") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
+
+/* @font-face { */
+/*   font-family: "Segoe UI"; */
+/*   src: url("/assets/fonts/SEGUISB.TTF") format("truetype"); */
+/*   font-weight: 600; */
+/*   font-style: normal; */
+/* } */
 
 /* Gestura Display Font Family */
 @font-face {
