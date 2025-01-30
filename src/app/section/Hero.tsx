@@ -26,7 +26,7 @@ function Hero() {
             aria-label="Mobile menu"
           />
           <Image
-            src="/assets/logos/company/logo.svg"
+            src="/assets/logos/company/logo.webp"
             width={178}
             height={34}
             alt="Logo"

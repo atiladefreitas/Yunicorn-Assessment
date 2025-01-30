@@ -1,24 +1,24 @@
 export const partners = [
   {
-    src: "/assets/logos/partners/forbes.png",
+    src: "/assets/logos/partners/forbes.webp",
     width: 104,
     height: 26,
     alt: "Forbes logo",
   },
   {
-    src: "/assets/logos/partners/hamburg.png",
+    src: "/assets/logos/partners/hamburg.webp",
     width: 137,
     height: 26,
     alt: "Hamburg logo",
   },
   {
-    src: "/assets/logos/partners/borse.png",
+    src: "/assets/logos/partners/borse.webp",
     width: 88,
     height: 41,
     alt: "Börse logo",
   },
   {
-    src: "/assets/logos/partners/focus.png",
+    src: "/assets/logos/partners/focus.webp",
     width: 108,
     height: 40,
     alt: "Focus logo",
@@ -119,3 +119,28 @@ export const book = [
   { icon: "/assets/icons/money.svg", title: "Spare Geld!" },
   { icon: "/assets/icons/chart.svg", title: "Spare dir schlechte Trades!" },
 ];
+
+export const footer = {
+  Aktuelles: [
+    "Investment & Trading Wissen",
+    "Für Beginner",
+    "Buch - Dein Millionendepot",
+    "Buch - Traumberuf Trader",
+    "Screeningdienst",
+    "Trader der Woche",
+    "Blog",
+    "Newsletter",
+    "Hast du noch Fragen?",
+  ],
+  Ausbildungen: ["Investment Ausbildung", "Trading Ausbildung", "Login"],
+  "Lüddemann Investments": [
+    "Home",
+    "Unser Team",
+    "Über Mario",
+    "Erfolgsgeschichten",
+    "Bewertungen",
+    "Presse",
+    "Karriere",
+    "Das Partnerprogramm",
+  ],
+};

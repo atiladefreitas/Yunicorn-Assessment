@@ -10,9 +10,11 @@ import {
   testimonials,
   goals,
   book,
+  footer,
 } from "./infos";
 import Buttons from "@/components/buttons";
 import Hero from "./section/Hero";
+import Footer from "./section/Footer";
 
 export default function Home() {
   return (
@@ -362,32 +364,8 @@ export default function Home() {
           </section>
         </div>
       </section>
-
-      <footer className="flex h-screen w-full flex-col">
-        <div className="grid h-full grid-cols-5">
-          <div className="col-span-2 bg-gray-200">a</div>
-          <div className="bg-red-100">a</div>
-          <div className="bg-green-100">a</div>
-          <div className="bg-purple-100">a</div>
-        </div>
-        <div className="grid h-[8rem] grid-cols-3 items-center justify-center border-t border-t-black/15 px-8">
-          <div className="flex justify-start">
-            <p className="font-segoe text-md">
-              Copyright © 2025 Lüddemann Investments
-            </p>
-          </div>
-
-          <div className="flex items-center justify-center">
-            <p className="font-segoe text-md">Impressum</p>
-            <Dot className="h-8 w-8" />
-            <p className="font-segoe text-md">Datenschutz</p>
-          </div>
-
-          <div className="flex justify-end">
-            <p className="font-segoe text-md">Design by Yunicorn</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
+
