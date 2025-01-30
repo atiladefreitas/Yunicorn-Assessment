@@ -64,7 +64,7 @@ function Hero() {
             alt="Logo"
             priority
           />
-          <div className="hidden max-w-5xl md:grid md:grid-cols-3 lg:grid-cols-6">
+          <div className="hidden max-w-5xl md:grid md:grid-cols-3 md:gap-2 lg:grid-cols-6">
             {navbar.map((option, index) => (
               <p
                 key={index}
