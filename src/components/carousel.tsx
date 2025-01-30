@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import * as React from "react";
 import Image from "next/image";
 import {
@@ -28,7 +28,7 @@ export function CarouselDemo() {
         <CarouselContent>
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index}>
-              <article className="flex flex-col items-center gap-16 text-center p-4">
+              <article className="flex flex-col items-center gap-12 p-4 text-center">
                 <Image
                   width={250}
                   height={250}
@@ -36,8 +36,19 @@ export function CarouselDemo() {
                   alt={testimonial.author}
                   loading="lazy"
                 />
-                <header className="flex flex-col gap-1">
-                  <h3 className="font-gestura text-3xl">{testimonial.author}</h3>
+
+                <header className="flex flex-col items-center gap-1">
+                  <Image
+                    width={64}
+                    height={56}
+                    src={"/assets/icons/quote.svg"}
+                    alt={testimonial.author}
+                    loading="lazy"
+                    className="mb-4"
+                  />
+                  <h3 className="font-gestura text-3xl">
+                    {testimonial.author}
+                  </h3>
                   <p className="font-segoe text-xl uppercase italic text-black/50">
                     {testimonial.title}
                   </p>
@@ -49,8 +60,6 @@ export function CarouselDemo() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </div>
   );

@@ -11,7 +11,7 @@ function Testimonials() {
       {testimonials.map((testimonial, index) => (
         <article
           key={index}
-          className="flex flex-col items-center gap-16 text-center"
+          className="flex flex-col items-center gap-12 text-center"
         >
           <Image
             width={250}
@@ -20,7 +20,15 @@ function Testimonials() {
             alt={testimonial.author}
             loading="lazy"
           />
-          <header className="flex flex-col gap-1">
+          <header className="flex flex-col items-center gap-1">
+            <Image
+              width={64}
+              height={56}
+              src={"/assets/icons/quote.svg"}
+              alt={testimonial.author}
+              loading="lazy"
+              className="mb-4"
+            />
             <h3 className="font-gestura text-3xl">{testimonial.author}</h3>
             <p className="font-segoe text-xl uppercase italic text-black/50">
               {testimonial.title}

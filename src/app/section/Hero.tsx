@@ -86,7 +86,7 @@ function Hero() {
           </div>
         </article>
 
-        <footer className="flex w-full items-center justify-between">
+        <footer className="hidden w-full items-center justify-between md:flex">
           {partners.map((partner, index) => (
             <Image
               key={index}
@@ -97,6 +97,20 @@ function Hero() {
               className="object-contain"
               style={{ width: "auto", height: "auto" }}
             />
+          ))}
+        </footer>
+        <footer className="grid w-full grid-cols-2 items-center justify-center md:hidden">
+          {partners.map((partner, index) => (
+            <span key={index} className="flex items-center justify-center py-6">
+              <Image
+                src={partner.src}
+                width={partner.width}
+                height={partner.height}
+                alt={partner.alt}
+                className="object-contain"
+                style={{ width: "auto", height: "auto" }}
+              />
+            </span>
           ))}
         </footer>
       </div>

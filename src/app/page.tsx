@@ -99,7 +99,7 @@ export default function Home() {
             className="h-fit gap-16 md:mt-12 md:h-screen"
             aria-label="Statistics"
           >
-            <div className="flex flex-col justify-between space-y-8 md:my-28 md:flex-row">
+            <div className="flex flex-col justify-between gap-8 md:my-28 md:flex-row">
               {statistics.map((stat, index) => (
                 <StatisticCard
                   key={index}
@@ -109,7 +109,7 @@ export default function Home() {
               ))}
             </div>
 
-            <article className="mt-20 grid grid-cols-1 gap-16 md:grid-cols-2">
+            <article className="mt-24 grid grid-cols-1 gap-16 md:mt-36 md:grid-cols-2">
               <div className="flex h-full w-full flex-col items-center justify-center gap-8">
                 <h2 className="font-gestura text-4xl leading-none text-custom-slate md:text-6xl">
                   Mario Lüddemanns Screeningdienst
@@ -158,8 +158,9 @@ export default function Home() {
                       <Dot color="#9D968C" />
                       <p>{benefit}</p>
                     </span>
+                    <Separator className="my-6 max-w-md md:hidden" />
                     {index !== benefitsLeft.length - 1 && (
-                      <Separator className="my-2 max-w-md" />
+                      <Separator className="my-6 max-w-md hidden md:block" />
                     )}
                   </li>
                 ))}
@@ -172,7 +173,7 @@ export default function Home() {
                       <p>{benefit}</p>
                     </span>
                     {index !== benefitsLeft.length - 1 && (
-                      <Separator className="my-2 max-w-md" />
+                      <Separator className="my-6 max-w-md" />
                     )}
                   </li>
                 ))}
@@ -181,7 +182,7 @@ export default function Home() {
           </section>
 
           <section
-            className="mt-12 grid w-full grid-cols-1 gap-20 pb-24 md:grid-cols-2 md:gap-32"
+            className="mt-14 grid w-full grid-cols-1 gap-20 pb-24 md:mt-28 md:grid-cols-2 md:gap-32"
             aria-label="Bonus section"
           >
             <div>
@@ -223,16 +224,16 @@ export default function Home() {
             </article>
           </section>
 
-          <div className="hidden md:block">
+          <div className="mt-32 hidden md:block">
             <Testimonials />
           </div>
 
-          <div className="md:hidden">
+          <div className="mt-24 md:hidden">
             <CarouselDemo />
           </div>
 
           <section
-            className="mt-44 grid w-full grid-cols-1 gap-16 md:grid-cols-2 md:gap-28"
+            className="mt-32 grid w-full grid-cols-1 gap-16 md:mt-64 md:grid-cols-2 md:gap-0"
             aria-label="Goals and advantages"
           >
             <header>
@@ -270,7 +271,7 @@ export default function Home() {
           </section>
 
           <section
-            className="mt-12 grid min-h-[3rem] w-full grid-cols-1 items-center gap-16 md:grid-cols-2 md:gap-28"
+            className="mt-24 grid min-h-[3rem] w-full grid-cols-1 items-center gap-16 md:mt-36 md:grid-cols-2 md:gap-28"
             aria-label="Booking section"
           >
             <div>
@@ -313,7 +314,7 @@ export default function Home() {
           </section>
 
           <section
-            className="mt-24 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-28"
+            className="mt-24 grid grid-cols-1 gap-8 md:mt-48 md:grid-cols-2 md:gap-28"
             aria-label="Quality section"
           >
             <Image
@@ -325,7 +326,7 @@ export default function Home() {
               className="order-first w-full md:order-last"
             />
 
-            <article className="order-last flex flex-col gap-8 md:order-first md:gap-16">
+            <article className="order-last flex flex-col justify-center gap-8 md:order-first md:gap-6">
               <Image
                 src="/assets/icons/quality-seal.png"
                 width={114}
@@ -333,9 +334,19 @@ export default function Home() {
                 alt="Quality seal"
                 loading="lazy"
               />
-              <p className="text-lg text-black/70 md:text-xl">
-                778 Bewertungen auf ProvenExpert.com
-              </p>
+
+              <span className="flex gap-2">
+                <Image
+                  src="/assets/icons/stars.svg"
+                  width={96}
+                  height={16}
+                  alt="Quality seal"
+                  loading="lazy"
+                />
+                <p className="text-lg text-black/70 md:text-xl">
+                  778 Bewertungen auf ProvenExpert.com
+                </p>
+              </span>
               <h2 className="font-gestura text-4xl md:text-6xl lg:text-6xl">
                 Coaching,
                 <br /> Mentoring für Börsenhandel <br /> und synthetische
