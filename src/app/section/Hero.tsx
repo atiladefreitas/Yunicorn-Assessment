@@ -37,7 +37,7 @@ function Hero() {
             <SheetContent side="left" className="bg-[#172329] p-6">
               <SheetTitle className="font-gestura text-xl text-white">
                 <Image
-                  src="/assets/logos/company/logo.webp"
+                  src="/assets/logos/company/logo.svg"
                   width={178}
                   height={34}
                   alt="Logo"
@@ -58,7 +58,7 @@ function Hero() {
             </SheetContent>
           </Sheet>
           <Image
-            src="/assets/logos/company/logo.webp"
+            src="/assets/logos/company/logo.svg"
             width={178}
             height={34}
             alt="Logo"

@@ -9,7 +9,7 @@ function Footer() {
       <div className="grid h-full grid-cols-1 gap-8 px-4 md:grid-cols-5 md:px-12">
         <div className="flex flex-col gap-5 md:col-span-2">
           <Image
-            src="/assets/logos/company/logo_alt.webp"
+            src="/assets/logos/company/logo_alt.svg"
             width={180}
             height={34}
             alt="Logo"

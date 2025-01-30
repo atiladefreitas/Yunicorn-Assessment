@@ -27,7 +27,7 @@ export default function Home() {
         aria-label="Main content"
       >
         <div className="w-full max-w-7xl">
-          <header className="gap-md flex h-[2.8rem] items-center">
+          <header className="gap-md flex h-[2.8rem] items-center gap-4">
             <Image
               src="/assets/logos/company/icon.svg"
               width={27}
