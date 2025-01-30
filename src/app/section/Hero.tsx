@@ -1,9 +1,15 @@
 "use client";
 import Image from "next/image";
-import { ChevronDown, Dot, Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 
 import { partners, navbar } from "../infos";
 import Buttons from "@/components/buttons";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
 
 function Hero() {
   return (
@@ -20,11 +26,37 @@ function Hero() {
           className="flex items-center gap-4 md:justify-between"
           aria-label="Main navigation"
         >
-          <Menu
-            color="white"
-            className="cursor-pointer md:hidden"
-            aria-label="Mobile menu"
-          />
+          <Sheet>
+            <SheetTrigger asChild>
+              <Menu
+                color="white"
+                className="cursor-pointer md:hidden"
+                aria-label="Mobile menu"
+              />
+            </SheetTrigger>
+            <SheetContent side="left" className="bg-[#172329] p-6">
+              <SheetTitle className="font-gestura text-xl text-white">
+                <Image
+                  src="/assets/logos/company/logo.webp"
+                  width={178}
+                  height={34}
+                  alt="Logo"
+                  priority
+                />
+              </SheetTitle>
+              <div className="flex flex-col gap-6 pt-12">
+                {navbar.map((option, index) => (
+                  <p
+                    key={index}
+                    className="flex cursor-pointer items-center gap-[6px] font-segoe text-white"
+                  >
+                    {option.title.toUpperCase()}
+                    {option.popover && <ChevronDown className="text-white" />}
+                  </p>
+                ))}
+              </div>
+            </SheetContent>
+          </Sheet>
           <Image
             src="/assets/logos/company/logo.webp"
             width={178}
