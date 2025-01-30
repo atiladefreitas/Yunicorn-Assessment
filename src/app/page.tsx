@@ -342,7 +342,7 @@ export default function Home() {
                 loading="lazy"
               />
 
-              <span className="flex gap-2">
+              <span className="flex flex-col gap-2 md:flex-row">
                 <Image
                   src="/assets/icons/stars.svg"
                   width={96}
@@ -350,7 +350,7 @@ export default function Home() {
                   alt="Quality seal"
                   loading="lazy"
                 />
-                <p className="text-lg text-black/70 md:text-xl">
+                <p className="text-nd text-black/70 md:text-xl">
                   778 Bewertungen auf ProvenExpert.com
                 </p>
               </span>
