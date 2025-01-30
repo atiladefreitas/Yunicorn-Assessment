@@ -10,13 +10,12 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-xlrimary-foreground hover:bg-primary/90",
-        trading:
-          "bg-[radial-gradient(ellipse_at_center,_#537589_0%,_#295A77_100%)] ",
+        trading: "bg-[linear-gradient(_#FFFFFF60_0%,_#22343E_100%)] p-[1.2px]",
         investment:
-          "bg-[linear-gradient(90deg,_#FFDB9E00_0%,_#FFDB9E44_44%,_#FFDB9E00_100%)] bg-[#F6F3E7] border-[1.5px] border-[#A69577]",
+          "bg-[linear-gradient(90deg,_#FFDB9E00_0%,_#FFDB9E44_44%,_#FFDB9E00_100%)] bg-[#F6F3E7] border-[1.5px] border-[#A69577] px-4 py-2",
       },
       size: {
-        default: "h-[56px] w-[200px] px-4 py-2 rounded-[8px]",
+        default: "h-[56px] w-[200px] rounded-lg",
       },
     },
     defaultVariants: {
