@@ -1,5 +1,6 @@
+"use client"
 import * as React from "react";
-
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -7,8 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
 import Autoplay from "embla-carousel-autoplay";
+import { testimonials } from "@/app/infos";
 
 export function CarouselDemo() {
   const plugin = React.useRef(
@@ -16,18 +17,35 @@ export function CarouselDemo() {
   );
 
   return (
-    <div className="hidden h-[20rem] w-full max-w-6xl rounded-md md:flex">
+    <div className="w-full max-w-6xl rounded-md">
       <Carousel
         className="w-full"
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
-        opts={{ loop: false }}
+        opts={{ loop: true }}
       >
-        <CarouselContent className="h-[20rem]">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index} className="overflow-hidden">
-              <div className="h-full overflow-hidden p-1">aaaa</div>
+        <CarouselContent>
+          {testimonials.map((testimonial, index) => (
+            <CarouselItem key={index}>
+              <article className="flex flex-col items-center gap-16 text-center p-4">
+                <Image
+                  width={250}
+                  height={250}
+                  src={testimonial.photo}
+                  alt={testimonial.author}
+                  loading="lazy"
+                />
+                <header className="flex flex-col gap-1">
+                  <h3 className="font-gestura text-3xl">{testimonial.author}</h3>
+                  <p className="font-segoe text-xl uppercase italic text-black/50">
+                    {testimonial.title}
+                  </p>
+                </header>
+                <blockquote className="font-segoe text-xl text-black/60">
+                  {testimonial.text}
+                </blockquote>
+              </article>
             </CarouselItem>
           ))}
         </CarouselContent>

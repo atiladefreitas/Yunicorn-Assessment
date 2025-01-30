@@ -14,8 +14,8 @@ function Testimonials() {
           className="flex flex-col items-center gap-16 text-center"
         >
           <Image
-            width={300}
-            height={300}
+            width={250}
+            height={250}
             src={testimonial.photo}
             alt={testimonial.author}
             loading="lazy"

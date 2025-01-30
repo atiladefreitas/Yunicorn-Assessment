@@ -16,6 +16,7 @@ import Buttons from "@/components/buttons";
 import Hero from "./section/Hero";
 import Footer from "./section/Footer";
 import Testimonials from "./section/Testimonails";
+import { CarouselDemo } from "@/components/carousel";
 
 export default function Home() {
   return (
@@ -222,7 +223,13 @@ export default function Home() {
             </article>
           </section>
 
-          <Testimonials />
+          <div className="hidden md:block">
+            <Testimonials />
+          </div>
+
+          <div className="md:hidden">
+            <CarouselDemo />
+          </div>
 
           <section
             className="mt-44 grid w-full grid-cols-1 gap-16 md:grid-cols-2 md:gap-28"
