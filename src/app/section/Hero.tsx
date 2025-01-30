@@ -64,11 +64,11 @@ function Hero() {
             alt="Logo"
             priority
           />
-          <div className="hidden gap-11 md:flex">
+          <div className="hidden max-w-5xl md:grid md:grid-cols-3 lg:grid-cols-6">
             {navbar.map((option, index) => (
               <p
                 key={index}
-                className="flex cursor-pointer items-center gap-1 font-segoe text-white"
+                className="flex w-full cursor-pointer items-center justify-center gap-1 font-segoe text-white"
               >
                 {option.title.toUpperCase()}
                 {option.popover && <ChevronDown className="text-white/60" />}
