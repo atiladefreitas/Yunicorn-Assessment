@@ -24,20 +24,21 @@ export default function Home() {
         style={{ backgroundImage: "url('/assets/bg.webp')" }}
       >
         <div className="flex h-full w-full max-w-7xl flex-col justify-between pb-20 pt-12">
-          <nav className="flex justify-between" aria-label="Main navigation">
+          <nav
+            className="flex items-center gap-4 md:justify-between"
+            aria-label="Main navigation"
+          >
+            <Menu
+              color="white"
+              className="cursor-pointer md:hidden"
+              aria-label="Mobile menu"
+            />
             <Image
               src="/assets/logos/company/logo.svg"
               width={178}
               height={34}
               alt="Logo"
             />
-            <div>
-              <Menu
-                color="white"
-                className="md:hidden"
-                aria-label="Mobile menu"
-              />
-            </div>
             <div className="hidden gap-[2.8rem] md:flex">
               {navbar.map((option, index) => (
                 <p
@@ -67,7 +68,7 @@ export default function Home() {
                       />
                     ))}
                 </div>
-                <p className="font-md font-segoe">SCREENINGDIENST</p>
+                <p className="font-segoe text-xl">SCREENINGDIENST</p>
               </span>
               <h1 className="mb-4 text-center font-gestura text-4xl text-white md:text-7xl">
                 Dein professionelles <br />
@@ -103,7 +104,7 @@ export default function Home() {
       </header>
 
       <section
-        className="full flex min-h-screen items-center justify-center bg-[#FDFBF4] px-4 pt-24"
+        className="full flex min-h-screen items-center justify-center bg-[#FDFBF4] px-4 pb-24 pt-24"
         aria-label="Main content"
       >
         <div className="w-full max-w-7xl">
@@ -446,6 +447,32 @@ export default function Home() {
           </section>
         </div>
       </section>
+
+      <footer className="flex h-screen w-full flex-col">
+        <div className="grid h-full grid-cols-5">
+          <div className="col-span-2 bg-gray-200">a</div>
+          <div className="bg-red-100">a</div>
+          <div className="bg-green-100">a</div>
+          <div className="bg-purple-100">a</div>
+        </div>
+        <div className="grid h-[8rem] grid-cols-3 items-center justify-center border-t border-t-black/15 px-8">
+          <div className="flex justify-start">
+            <p className="font-segoe text-md">
+              Copyright © 2025 Lüddemann Investments
+            </p>
+          </div>
+
+          <div className="flex items-center justify-center">
+            <p className="font-segoe text-md">Impressum</p>
+            <Dot className="h-8 w-8" />
+            <p className="font-segoe text-md">Datenschutz</p>
+          </div>
+
+          <div className="flex justify-end">
+            <p className="font-segoe text-md">Design by Yunicorn</p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

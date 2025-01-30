@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        md: "18px",
+        md: "16px",
       },
       fontFamily: {
         segoe: ["Segoe UI", "sans serif"],
